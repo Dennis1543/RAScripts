@@ -178,6 +178,14 @@ achievement(title = "Brawn Over Brains", description = "Win 'Mallet Melee' by on
 //          0x24 = Finish
 // $09C185: [8 BIT] Minigame Timer Seconds Digit 1 in Skating Scamper (if countdown > 10)
 // $09C1B1: [8 BIT] Minigame Timer Seconds Digit 2 in Skating Scamper
+achievement(title = "Speed Skater", description = "Cross the finish line in 'Skating Scamper' with at least 30 seconds remaining on the timer.", points = 5,
+            id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
+            trigger = currentMinigameID() == Skating_Scamper && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            byte(0x0ac797) == 0x80 && //Game Running
+            byte(0x09C185) >= 0x03 &&
+            trigger_when(byte(0x09C046) == 0x24)
+)
 
 // $09C235: [8 BIT] Fish Caught Index for Gone Fishing
 //          00 = Brown Fish (+2)
@@ -194,20 +202,8 @@ achievement(title = "Snack That Smiles Back", description = "Catch the gold fish
 
 
 // $09C33D: [4 BIT] P1 Active Seconds Digit 1 in Spotlight Please!
-// $09C35C: [8 BIT] P1 Bottom Screen Location (Left/Right) in Hang Gliding Hurricane
-//          0x00 = cutscene
-//          0x08 = start
-//          0xdf = finish
 // $09C369: [4 BIT] P1 Active Seconds Digit 2 in Spotlight Please!
-// $09C388: [8 BIT] P2 Bottom Screen Location (Left/Right) in Hang Gliding Hurricane
-//          0x00 = cutscene
-//          0x08 = start
-//          0xdf = finish
 // $09C395: [4 BIT] P1 Active Milliseconds Digit 1 in Spotlight Please!
-// $09C3B4: [8 BIT] P3 Bottom Screen Location (Left/Right) in Hang Gliding Hurricane
-//          0x00 = cutscene
-//          0x08 = start
-//          0xdf = finish
 // $09C3C1: [4 BIT] P1 Active Milliseconds Digit 2 in Spotlight Please!
 achievement(title = "All Eyes On Me", description = "In 'Spotlight Please!', give Trevor at least 10 seconds of spotlight time.", points = 5,
             id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
@@ -217,10 +213,30 @@ achievement(title = "All Eyes On Me", description = "In 'Spotlight Please!', giv
             trigger_when(byte(0x09C33D) >= 0x01)
 )
 
-// $09C3E0: [8 BIT] P4 Bottom Screen Location (Left/Right) in Hang Gliding Hurricane
+// $09C35C: [8 BIT] P1 Bottom Screen Location (Left/Right) in Hang Gliding Hurricane
 //          0x00 = cutscene
 //          0x08 = start
 //          0xdf = finish
+// $09C388: [8 BIT] P2 Bottom Screen Location (Left/Right) in Hang Gliding Hurricane
+//          0x00 = cutscene
+//          0x08 = start
+//          0xdf = finish
+// $09C3B4: [8 BIT] P3 Bottom Screen Location (Left/Right) in Hang Gliding Hurricane
+//          0x00 = cutscene
+//          0x08 = start
+//          0xdf = finish
+// $09C3E0: [8 BIT] P4 Bottom Screen Location (Left/Right) in Hang Gliding Hurricane
+//          0x00 = cutscene
+//          0x08 = start
+//          0xdf = finish  
+achievement(title = "Weather Dodger", description = "Win 'Hang Gliding Hurricane' without hitting any obstacles or CPU players.", points = 5,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentMinigameID() == Hang_Gliding_Hurricane && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            disable_when( byte(0x09c07e) == 0x00 && (byte(0x145728) == 0x01 || byte(0x145728) == 0x02), until = byte(0x0ac797) != 0x80 && byte(0x0ac797) != 0x0b) &&
+            trigger_when(byte(0x0ac797) == 0x0b)
+)
+
 // $09C655: [4 BIT] P1 Seconds Digit 1 Bus! Stop!
 // $09C681: [4 BIT] P1 Seconds Digit 2 Bus! Stop!
 // $09C6D9: [4 BIT] P1 Milliseconds Digit 1 Bus! Stop!
@@ -1125,6 +1141,28 @@ achievement(title = "Customizing Festival Winner", description = "Win the Custom
 //          Bit 6 = Perfect Slot Jackpot
 //          Bit 7 = Spotting Safari
 // $12A50A: [8 BIT] Current Minigame Number During Festival
+
+
+
+function minigameUnlockCount()
+{
+    return measured(
+           bit1(0x12A533) + bit2(0x12A533) + bit3(0x12A533) + bit4(0x12A533) + bit5(0x12A533) + bit6(0x12A533) + bit7(0x12A533) + //split up because bit0 is nothing
+           bitcount(0x12A534) + bitcount(0x12A535) + 
+           bitcount(0x12A536) + bitcount(0x12A537) + bit0(0x12A538) == 40
+           )
+}
+
+function prevMinigameCount()
+{
+    return (prev(
+                bit1(0x12A533) + bit2(0x12A533) + bit3(0x12A533) + bit4(0x12A533) + bit5(0x12A533) + bit6(0x12A533) + bit7(0x12A533) + //split up because bit0 is nothing
+                bitcount(0x12A534) + bitcount(0x12A535) + 
+                bitcount(0x12A536) + bitcount(0x12A537) + bit0(0x12A538)
+                )
+           )
+}
+
 // $12A533: [8 BIT] Minigame Unlock (Minigame Mode) BitFlags
 //          Bit 1 = Pass and Check
 //          Bit 2 = Hush Hush Library Rush
@@ -1171,6 +1209,8 @@ achievement(title = "Customizing Festival Winner", description = "Win the Custom
 //          Bit 7 = Perfect Slot Jackpot
 // $12A538: [4 BIT] Minigame Unlock (Minigame Mode) BitFlags 6
 //          Bit 0 = Spotting Safari
+
+
 // $12A56C: [8 BIT] P1 Name First Letter (1)
 //          Letter Index:
 //          [if in letter space, end of name] 0x00=
@@ -1409,11 +1449,20 @@ achievement(title = "Customizing Festival Winner", description = "Win the Custom
 // $12EBC6: [16 BIT] Soft Service Highscore Record
 // $12ECD4: [16 BIT] Vroom Service Highscore Record
 // $12FDB4: [16 BIT] Bus Stop Highscore Record 
+
+
+
 // $145216: [8 BIT] P1 Active Balloon Size in Sleeping Sophie
 // $14525E: [8 BIT] P2 Active Balloon Size in Sleeping Sophie
 // $1452A6: [8 BIT] P3 Active Balloon Size in Sleeping Sophie
 // $1452EE: [8 BIT] P4 Active Balloon Size in Sleeping Sophie
-
+achievement(title = "Narcolepsy Be Gone", description = "Win 'Sleeping Sophie' with at least 15 seconds remaining on the timer.", points = 5,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentMinigameID() == Sleeping_Sophie && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            ( byte(0x09c419) >= 0x02 || (byte(0x09c419) == 0x01 && byte(0x09c445) >= 0x05) ) &&
+            trigger_when(byte(0x0ac797) == 0x0b)
+)
 
 
 // $1467E8: [8 BIT]  P1 Active Spaghetti Left in Spaghetti Spin-Off
@@ -1468,6 +1517,15 @@ achievement(title = "The 'F' Stands for 'Achievement'", description = "Score 100
 )
 
 // $146B5C: [8 BIT] P1 Active Percentage Dirty in Crystal Clear (0 = Win)
+achievement(title = "Clairvoyant Cleanser", description = "Win 'Crystal Clear' with at least 40 seconds remaining on the timer.", points = 5,
+            id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
+            trigger = currentMinigameID() == Crystal_Clear && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            byte(0x0ac797) == 0x73 && //Game Running
+            byte(0x09C705) >= 0x04 && byte(0x09c6f8) == 0xd9 &&
+            trigger_when(byte(0x146B5C) == 0)
+)
+
 
 // $1470D2: [8 BIT] P1 Active Score in Shuffle Cup
 achievement(title = "Beating The House", description = "Score 100 points in 'Shuffle Cup' by guessing correctly all 3 times.", points = 3,
@@ -1659,13 +1717,44 @@ achievement(title = "Fossil Fighter", description = "Win 'Skull Finder' without 
 )
 
 // $149CBC: [4 BIT] P1 Active Score ( / 5 ) in Hidden Treasures
+achievement(title = "Treasure Finder", description = "Win 'Hidden Treasures' with at least 30 seconds remaining on the timer.", points = 5,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentMinigameID() == Hidden_Treasures && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            (byte(0x09c56c) == 0x78 && byte(0x09c579) >= 0x03 ) &&
+            byte(0x0ac797) == 0x73 && //Game Running
+            trigger_when(byte(0x149CBC) == 0x05)
+)
+
 // $14A09A: [8 BIT] P1 Active Score in Catch the Crook
+achievement(title = "Police Cadet", description = "Reach the police station and win 'Catch the Crook' without hitting any obstacles.", points = 5,
+            id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
+            trigger = currentMinigameID() == Catch_the_Crook && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            disable_when( byte(0x14a099) == 0x9c || byte(0x14a099) == 0x98 || byte(0x14a099) == 0x18 || byte(0x14a099) == 0x19, until = byte(0x0ac797) != 0x80 &&  byte(0x0ac797) != 0x0b) &&
+            trigger_when(byte(0x0ac797) == 0x0b)
+)
+
 // $14A1D8: [8 BIT] P1 Active Score in Pretty Pottery
+achievement(title = "Pottery Perfectionist", description = "Score 100 points in 'Pretty Pottery' without making any mistakes.", points = 5,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentMinigameID() == Pretty_Pottery && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            disable_when( (byte(0x09cc48) == 0x05 && byte(0x09c06f) == 0x40), until = byte(0x0ac797) != 0x64) &&
+            trigger_when(byte(0x14A1D8) >= 100)
+)
+
 // $14A750: [8 BIT] P1 Active Score in Pastry Puzzle
 // $14A754: [8 BIT] P2 Active Score in Pastry Puzzle
 // $14A758: [8 BIT] P3 Active Score in Pastry Puzzle
 // $14A75C: [8 BIT] P4 Active Score in Pastry Puzzle
-
+achievement(title = "Sous Chef", description = "Score 100 points in 'Pastry Puzzle'.", points = 5,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentMinigameID() == Pastry_Puzzle && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            byte(0x0ac797) == 0x80 &&
+            trigger_when(byte(0x14A750) >= 100)
+)
 
 // $14A968: [8 BIT] P1 Active Score in Perfect Slot Jackpot
 // $14A96C: [8 BIT] P2 Active Score in Perfect Slot Jackpot
@@ -1693,7 +1782,22 @@ achievement(title = "Librarian's Pet", description = "Score at least 50 points w
 // $14B6EC: [8 BIT] P2 Active Score in Spotting Safari
 // $14B6F0: [8 BIT] P3 Active Score in Spotting Safari
 // $14B6F4: [8 BIT] P4 Active Score in Spotting Safari
+achievement(title = "Wildlife Conservationist", description = "Earn at least 75 Points in 'Spotting Safari' without making any mistakes.", points = 5,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentMinigameID() == Spotting_Safari && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            disable_when( (byte(0x14b6fc) == 0x02), until = byte(0x0ac797) != 0x80) &&
+            trigger_when(byte(0x14B6E8) >= 75)
+)
+
 // $14C0C4: [8 BIT] P1 Active Score in Sim-Fu Showdown
+achievement(title = "Untouchable Sim-Fu Sensei", description = "Earn at least 70 Points in 'Sim-Fu Showdown' without getting hit.", points = 5,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentMinigameID() == Sim_Fu_Showdown && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            disable_when( (byte(0x14c244) != 0x00), until = byte(0x0ac797) != 0x00) &&
+            trigger_when(byte(0x14C0C4) >= 70)
+)
 
 // $14CA4C: [8 BIT] P1 Active Dishes Served in Vroom Service
 //          (0x04 = Win)
@@ -1718,15 +1822,6 @@ achievement(title = "Professional Ghostbuster", description = "Score 100 points 
             byte(0x0ac797) == 0x73 && //Game Running
             trigger_when(byte(0x150458) >= 100)
 )
-
-
-
-
-
-
-
-
-
 
 // $282ffe: [8 BIT] Soccer Ball Horizontal Position
 // $283006: [8 BIT] Soccer Ball Vertical Position
@@ -1913,5 +2008,6 @@ function minigameTimeLeaderboardLT()
     minigameScoreLeaderboard(0, "Plane Pop", Plane_Pop)
     minigameScoreLeaderboard(0, "Perfect Slot Jackpot", Perfect_Slot_Jackpot)
     minigameScoreLeaderboard(0, "Spotting Safari", Spotting_Safari)
+
 
 
