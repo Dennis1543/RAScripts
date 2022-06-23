@@ -152,6 +152,14 @@ achievement(title = "MySims Pro Skater", description = "Ride the skateboard in t
 // $09BD23: [8 BIT] P1 Full Health Flag in Mallet Melee
 //          0x01 = Full Health
 //          0x00 = Not Full Health (0x09bd22 now shows health remaining)
+achievement(title = "Brawn Over Brains", description = "Win 'Mallet Melee' by only pressing the Y button (no other attacks or movement until the 'win' screen).", points = 3,
+            id = 0, badge = "00000", published = "7/6/2022", modified = "7/6/2022",
+            trigger = currentMinigameID() == Mallet_Melee && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            disable_when( word(0x09bd32) == 0xfff4 && ( bit0(0x09f8b4) ==  1 || bit1(0x09f8b4) == 1 || bit4(0x09f8b4) ==  1 || bit5(0x09f8b4) ==  1 ), until = byte(0x0ac797) == 0x00 && prev(byte(0x0ac797)) == 0xd1) && 
+            trigger_when(byte(0x0ac797) == 0x0b)
+)
+
 // $09C046: [8 BIT] P1 Position Top Screen in Skating Scamper
 //          0x10 = Pre-Game Cutscene
 //          0xb4 = Start
@@ -888,6 +896,54 @@ achievement(title = "Happy Home Designer", description = "Unlock every house ite
 )
 
 
+
+
+// $12A79C: [4 BIT] P2 Difficulty
+// $12A9E0: [4 BIT] P3 Difficulty
+// $12AC24: [4 BIT] P4 Difficulty
+// BITS 2 and 1 (bit2 bit1)
+// 00 == Weak
+// 01 == Normal
+// 10 == Strong
+// 11 == Powerful
+
+// Normal => bit2() == 0 && bit1() == 1
+// Strong => bit2() == 1 && bit1() == 0
+// Powerful => bit2() == 1 && bit1() == 1
+
+
+//Check difficulty or higher
+// Weak == 0
+// Normal == 1
+// Strong == 2
+// Powerful == 3
+function cpuDifficultyCheck(difficulty) //check difficulty or higher
+{
+    if(difficulty == 0)
+        return true
+    else if(difficulty == 1)
+    {
+        return ( ( (bit2(0x12A79C) == 0 && bit1(0x12A79C) == 1) ||  (bit2(0x12A79C) == 1 && bit1(0x12A79C) == 0) || (bit2(0x12A79C) == 1 && bit1(0x12A79C) == 1) ) && //P2
+                 ( (bit2(0x12A9E0) == 0 && bit1(0x12A9E0) == 1) ||  (bit2(0x12A9E0) == 1 && bit1(0x12A9E0) == 0) || (bit2(0x12A9E0) == 1 && bit1(0x12A9E0) == 1) ) && //P3
+                 ( (bit2(0x12AC24) == 0 && bit1(0x12AC24) == 1) ||  (bit2(0x12AC24) == 1 && bit1(0x12AC24) == 0) || (bit2(0x12AC24) == 1 && bit1(0x12AC24) == 1) ) //P4
+               )
+    }
+    else if(difficulty == 2)
+    {
+        return ( (   (bit2(0x12A79C) == 1 && bit1(0x12A79C) == 0) || (bit2(0x12A79C) == 1 && bit1(0x12A79C) == 1) ) && //P2
+                 (   (bit2(0x12A9E0) == 1 && bit1(0x12A9E0) == 0) || (bit2(0x12A9E0) == 1 && bit1(0x12A9E0) == 1) ) && //P3
+                 (   (bit2(0x12AC24) == 1 && bit1(0x12AC24) == 0) || (bit2(0x12AC24) == 1 && bit1(0x12AC24) == 1) ) //P4
+               )
+    }
+    else if(difficulty == 3)
+    {
+        return ( (   (bit2(0x12A79C) == 1 && bit1(0x12A79C) == 1) ) && //P2
+                 (   (bit2(0x12A9E0) == 1 && bit1(0x12A9E0) == 1) ) && //P3
+                 (   (bit2(0x12AC24) == 1 && bit1(0x12AC24) == 1) ) //P4
+               )
+    }
+}
+
 // $12A3E0: [8 BIT] Festivals Unlocked 1 Bitflags
 //          Bit 0 = Happy Festival
 //          Bit 1 = Pretty Festival
@@ -902,43 +958,43 @@ achievement(title = "Happy Home Designer", description = "Unlock every house ite
 //          Bit 1 = Dream Festival
 //          Bit 2 = Customizing Festival
 //          Bit 3 = All Stars (Beat Customizing Festival)
-achievement(title = "Opening Festival Winner", description = "Win the Opening Festival. Let the minigames begin!", points = 1,
+achievement(title = "Opening Festival Winner", description = "Win the Opening Festival. Let the minigames begin!", points = 2,
             id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
             trigger = bit0(0x12A3E0) == 1 && prev(bit0(0x12A3E0)) == 0 && 
             byte(0x12a24c) == 0xcf && prev(byte(0x12a24c)) != 0x00 //at the festival hall not loading in from menu
 )
 
-achievement(title = "Happy Festival Winner", description = "Win the Happy Festival. Are you happy now?", points = 2,
+achievement(title = "Happy Festival Winner", description = "Win the Happy Festival. Are you happy now?", points = 3,
             id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
             trigger = bit1(0x12A3E0) == 1 && prev(bit1(0x12A3E0)) == 0 && 
             byte(0x12a24c) == 0xcf && prev(byte(0x12a24c)) != 0x00 //at the festival hall not loading in from menu
 )
 
-achievement(title = "Pretty Festival Winner", description = "Win the Pretty Festival. Looking good!", points = 2,
+achievement(title = "Pretty Festival Winner", description = "Win the Pretty Festival. Looking good!", points = 4,
             id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
             trigger = bit2(0x12A3E0) == 1 && prev(bit2(0x12A3E0)) == 0 && 
             byte(0x12a24c) == 0xcf && prev(byte(0x12a24c)) != 0x00 //at the festival hall not loading in from menu
 )
 
-achievement(title = "Music Festival Winner", description = "Win the Music Festival. Give yourself to the rhythm!", points = 3,
+achievement(title = "Music Festival Winner", description = "Win the Music Festival. Give yourself to the rhythm!", points = 5,
             id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
             trigger = bit3(0x12A3E0) == 1 && prev(bit3(0x12A3E0)) == 0 && 
             byte(0x12a24c) == 0xcf && prev(byte(0x12a24c)) != 0x00 //at the festival hall not loading in from menu
 )
 
-achievement(title = "Bizarre Festival Winner", description = "Win the Bizarre Festival. Dr. F is pleased!", points = 3,
+achievement(title = "Bizarre Festival Winner", description = "Win the Bizarre Festival. Dr. F is pleased!", points = 5,
             id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
             trigger = bit4(0x12A3E0) == 1 && prev(bit4(0x12A3E0)) == 0 && 
             byte(0x12a24c) == 0xcf && prev(byte(0x12a24c)) != 0x00 //at the festival hall not loading in from menu
 ) 
 
-achievement(title = "Delicious Festival Winner", description = "Win the Delicious Festival. Mmm, delicious points.", points = 4,
+achievement(title = "Delicious Festival Winner", description = "Win the Delicious Festival. Mmm, delicious points.", points = 5,
             id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
             trigger = bit5(0x12A3E0) == 1 && prev(bit5(0x12A3E0)) == 0 && 
             byte(0x12a24c) == 0xcf && prev(byte(0x12a24c)) != 0x00 //at the festival hall not loading in from menu
 )
 
-achievement(title = "Speed Festival Winner", description = "Win the Speed Festival. You should be fined for speeding!", points = 4,
+achievement(title = "Speed Festival Winner", description = "Win the Speed Festival. You should be fined for speeding!", points = 5,
             id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
             trigger = bit6(0x12A3E0) == 1 && prev(bit6(0x12A3E0)) == 0 && 
             byte(0x12a24c) == 0xcf && prev(byte(0x12a24c)) != 0x00 //at the festival hall, not loading in from menu
@@ -968,7 +1024,7 @@ achievement(title = "Dream Festival Winner", description = "Win the Dream Festiv
             byte(0x12a24c) == 0xcf && prev(byte(0x12a24c)) != 0x00 //at the festival hall, not loading in from menu
 )
 
-achievement(title = "Customizing Festival Winner", description = "Win the Customizing Festival. Play your favorite games and get points! A win-win scenario!", points = 10,
+achievement(title = "Customizing Festival Winner", description = "Win the Customizing Festival. Play your favorite games and get points! A win-win scenario!", points = 25,
             id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
             trigger = bit3(0x12A3E1) == 1 && prev(bit3(0x12A3E1)) == 0 && 
             byte(0x12a24c) == 0xcf && prev(byte(0x12a24c)) != 0x00 //at the festival hall, not loading in from menu
@@ -1412,17 +1468,32 @@ achievement(title = "The 'F' Stands for 'Achievement'", description = "Score 100
 )
 
 // $146B5C: [8 BIT] P1 Active Percentage Dirty in Crystal Clear (0 = Win)
+
 // $1470D2: [8 BIT] P1 Active Score in Shuffle Cup
-// $1470EA: [8 BIT] P2 Active Score in Fortune Finders
-// $147102: [8 BIT] P3 Active Score in Fortune Finders
-// $14711A: [8 BIT] P4 Active Score in Fortune Finders
-// $147202: [8 BIT] P1 Active Score in Sushi Scramble
+achievement(title = "Beating The House", description = "Score 100 points in 'Shuffle Cup' by guessing correctly all 3 times.", points = 3,
+            id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
+            trigger = currentMinigameID() == Shuffle_Cup && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            byte(0x0ac797) == 0x3c && //Game Running
+            trigger_when(byte(0x1470D2) >= 100)
+)
+
+
+
+
 // $147810: [8 BIT] P1 Active Score in Fashion Mogul
+achievement(title = "Dolly's Dutiful Designer", description = "Earn at least 70 points in 'Fashion Mogul' without making any mistakes.", points = 5,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentMinigameID() == Fashion_Mogul && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf1) == 0x01 && //Game not paused
+            disable_when( (byte(0x1477f4) == 0x03), until = byte(0x0ac797) != 0x80) &&
+            trigger_when(byte(0x147810) >= 70)
+)
+
 // $147860: [8 BIT] (GUI) P1 Active Percentage in Signal Search // $09C731: [4 BIT] Minigame Timer Digit 2 in Signal Search if timer >= 10
 // $09C705: [4 BIT]
 //          P1 Milliseconds Digit 2 Bus! Stop!
 //          Minigame Timer in Signal Search + Sim-Fu Showdown + Crystal Clear Digit 1 and Countdown if < 10
-
 achievement(title = "Can You Hear Me Now?", description = "Win 'Signal Search' with at least 10 seconds remaining on the timer.", points = 5,
             id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
             trigger = currentMinigameID() == Signal_Search && //Minigame Selected
@@ -1436,8 +1507,13 @@ achievement(title = "Can You Hear Me Now?", description = "Win 'Signal Search' w
 //          0x02 = Final Level
 // $147D38: [8 BIT] P1 Patches Completed on Current Cloth Pattern
 //          0x04 on level 0x02 is win
-
-// $147F28: [8 BIT]  P1 Active Score in Gone Fishing
+achievement(title = "Tyler's Tailor in Training", description = "Win 'Clothing Cut-Out' without making any mistakes.", points = 5,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentMinigameID() == Clothing_Cut_Out && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf1) == 0x01 && //Game not paused
+            disable_when( (byte(0x147d40) == 0x01), until = byte(0x0ac797) != 0x80) &&
+            trigger_when(byte(0x147D34) == 0x02 && byte(0x147D38) == 0x04)
+)
 
 
 // $147F2A: [8 BIT] P1 Vertical Position in Bumper Boat Battle
@@ -1456,17 +1532,51 @@ achievement(title = "Can You Hear Me Now?", description = "Win 'Signal Search' w
 //          0x00 = Before moving from the starting line
 //          0xff = First movement
 //          0x05 = Finish Line (Win)
+achievement(title = "Cautious Captain", description = "Win 'Bumper Boat Battle' without hitting any whirlpools.", points = 5,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentMinigameID() == Bumper_Boat_Battle && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            disable_when( (byte(0x335646) != 0x00), until = byte(0x0ac797) != 0x80 && byte(0x0ac797) != 0x0b) &&
+            trigger_when(byte(0x0ac797) == 0x0b)
+)
+
+
 // $148218: [8 BIT] P1 Active Score in Plane Pop
 // $14821C: [8 BIT] P2 Active Score in Plane Pop
 // $148220: [8 BIT] P3 Active Score in Plane Pop
 // $148224: [8 BIT] P4 Active Score in Plane Pop
+achievement(title = "Bloon's Plane Offense", description = "Score at least 90 points in 'Plane Pop'.", points = 5,
+            id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
+            trigger = currentMinigameID() == Plane_Pop && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            byte(0x0ac797) == 0x80 && //Game Running
+            trigger_when(byte(0x148218) >= 90)
+)
+
+
 // $148374: [8 BIT] P1 Active Percentage (GUI) in Sudsy Salon
 //          0x28 = start/end
 //          0xcc = max (start washing)
 // $148378: [8 BIT] P2 Active Percentage (GUI) in Sudsy Salon
 // $14837C: [8 BIT] P3 Active Percentage (GUI) in Sudsy Salon
 // $148380: [8 BIT] P4 Active Percentage (GUI) in Sudsy Salon
+achievement(title = "Lather Rinse & Repeat", description = "Win 'Sudsy Salon' before any CPUs have finished shampooing.", points = 10,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentMinigameID() == Sudsy_Salon && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf1) == 0x01 && //Game not paused
+            disable_when( (byte(0x148378) == 0xcc || byte(0x14837C) == 0xcc || byte(0x148380) == 0xcc), until = byte(0x0ac797) != 0x3c ) &&
+            trigger_when( byte(0x148374) == 0x28 && prior(byte(0x148374)) != 0x00)
+)
+
 // $148634: [8 BIT]  P1 Active Score in Okay Bouquet
+achievement(title = "Poppy's Playtime", description = "Score at least 90 points in 'Okay Bouquet'.", points = 5,
+            id = 0, badge = "00000", published = "22/6/2022", modified = "22/6/2022",
+            trigger = currentMinigameID() == Okay_Bouquet && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf1) == 0x01 && //Game not paused
+            byte(0x0ac797) == 0x3c && //Game Running
+            trigger_when(byte(0x148634) >= 90)
+)
+
 // $148804: [8 BIT]  P1 Active Score Pass and Check
 achievement(title = "Paper Pushin' Bureaucrat", description = "Score 100 points in 'Pass and Check'.", points = 5,
             id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
@@ -1476,16 +1586,30 @@ achievement(title = "Paper Pushin' Bureaucrat", description = "Score 100 points 
             trigger_when(byte(0x148804) >= 100)
 )
 
-// $14880C: Interaction Disabled?
+
 // $14886C: [4 BIT] P1 Active Number of Stages Won in Fashion Reaction
 // $14888C: [4 BIT] P2 Active Number of Stages Won in Fashion Reaction
 // $1488AC: [4 BIT] P3 Active Number of Stages Won in Fashion Reaction
 // $1488CC: [4 BIT] P4 Active Number of Stages Won in Fashion Reaction
+achievement(title = "Runway Model", description = "Win 'Fashion Reaction' without letting the CPUs win any round.", points = 5,
+            id = 0, badge = "00000", published = "22/6/2022", modified = "22/6/2022",
+            trigger = currentMinigameID() == Fashion_Reaction && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            disable_when( byte(0x14888C) != 0x00 || byte(0x1488AC) != 0x00 || byte(0x1488CC) != 0x00, until = byte(0x0ac797) != 0x3c ) &&
+            trigger_when(byte(0x14886C) >= 3)
+)
+
 // $148F78: [8 BIT] P1 Active Score in Fortune Finders
 // $148F7C: [8 BIT] P2 Active Score in Fortune Finders
 // $148F80: [8 BIT] P3 Active Score in Fortune Finders
 // $148F84: [8 BIT] P4 Active Score in Fortune Finders
-
+achievement(title = "Gem Of The Day", description = "Find the gem worth 30 points in 'Fortune Finders'.", points = 2,
+            id = 0, badge = "00000", published = "7/6/2022", modified = "7/6/2022",
+            trigger = currentMinigameID() == Fortune_Finders && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            byte(0x0ac797) == 0x0b && //Game Running
+            trigger_when(byte(0x148F78) == (prior(byte(0x148F78)) + 30) )
+)
 
 // $149034: [8 BIT] P1 Active Score in My Mix Masters
 achievement(title = "DJ Hero", description = "Score 100 points in 'My Mix Masters'.", points = 5,
@@ -1507,14 +1631,31 @@ achievement(title = "Dairy Queen Bee", description = "Score 100 points in 'Soft 
 )
 
 // $149430: [8 BIT] P1 Active Score in Keys to Success
+achievement(title = "Ginny's Personal Locksmith", description = "Win 'Keys to Success' without making any mistakes.", points = 5,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentMinigameID() == Keys_to_Success && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            disable_when( (byte(0x14941c) == 0x07), until = byte(0x0ac797) != 0x3c && byte(0x0ac797) != 0x0b) &&
+            trigger_when(byte(0x0ac797) == 0x0b)
+)
+
+
 // $149B08: [8 BIT] P1 Active Score in Petal Platform Peril
+achievement(title = "Spooky Flower Collector", description = "Score at least 75 points in 'Petal Platform Peril'.", points = 5,
+            id = 0, badge = "00000", published = "7/6/2022", modified = "7/6/2022",
+            trigger = currentMinigameID() == Petal_Platform_Peril && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            byte(0x0ac797) == 0x64 && //Game Running
+            trigger_when(byte(0x149B08) >= 75)
+)
+
 // $149BF0: [8 BIT] Timer for Yelling at P1 in Skull Finder
-achievement(title = "Fossil Fighter", description = "Win 'Skull Finder' without making any mistakes.", points = 5,
+achievement(title = "Fossil Fighter", description = "Win 'Skull Finder' without making any mistakes.", points = 3,
             id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
             trigger = currentMinigameID() == Skull_Finder && //Minigame Selected
             byte(0x0a0095) != 0x1e && byte(0x097cf1) == 0x01 && //Game not paused
-            byte(0x0ac797) == 0x3c  //Game Running
-            
+            disable_when( (byte(0x163f78) == 0x02 && byte(0x09fb51) == 0x33), until = byte(0x0ac797) != 0x3c && byte(0x0ac797) != 0x0b) &&
+            trigger_when(byte(0x163f60) == 0x01 && byte(0x0ac797) == 0x0b)
 )
 
 // $149CBC: [4 BIT] P1 Active Score ( / 5 ) in Hidden Treasures
@@ -1524,10 +1665,19 @@ achievement(title = "Fossil Fighter", description = "Win 'Skull Finder' without 
 // $14A754: [8 BIT] P2 Active Score in Pastry Puzzle
 // $14A758: [8 BIT] P3 Active Score in Pastry Puzzle
 // $14A75C: [8 BIT] P4 Active Score in Pastry Puzzle
+
+
 // $14A968: [8 BIT] P1 Active Score in Perfect Slot Jackpot
 // $14A96C: [8 BIT] P2 Active Score in Perfect Slot Jackpot
 // $14A970: [8 BIT] P3 Active Score in Perfect Slot Jackpot
 // $14A974: [8 BIT] P4 Active Score in Perfect Slot Jackpot
+achievement(title = "If Only Real Slots Were This Slow...", description = "Score at least 400 points in 'Perfect Slot Jackpot'.", points = 5,
+            id = 0, badge = "00000", published = "7/6/2022", modified = "7/6/2022",
+            trigger = currentMinigameID() == Perfect_Slot_Jackpot && //Minigame Selected
+            byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && //Game not paused
+            byte(0x0ac797) == 0x0b && //Game Running
+            trigger_when(word(0x14a968) >= 400)
+)
 
 
 // $14AAFA: [8 BIT] P1 Active Score Hush Hush Library Rush
@@ -1568,9 +1718,8 @@ achievement(title = "Professional Ghostbuster", description = "Score 100 points 
             byte(0x0ac797) == 0x73 && //Game Running
             trigger_when(byte(0x150458) >= 100)
 )
-// $154268: [8 BIT] Collected Sims in Sim Notebook (ONLY IN SIM NOTEBOOK - Number you can scroll)
-// $15426C: [4 BIT] Highlight position in Sim Notebook (0-4)
-// $163F60: [8 BIT] P1 Active Percentage in Skull Finder
+
+
 
 
 
