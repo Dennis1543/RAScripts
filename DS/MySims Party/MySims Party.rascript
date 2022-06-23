@@ -284,7 +284,12 @@ achievement(title = "Motherlode", description = "Have at least 50,000 Simoleons.
 //          00 = character view
 //          01 = zoomed out
 
-
+achievement(title = "Is This Strangetown?", description = "Unlock and visit the desert area.", points = 1,
+            id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
+            trigger = prior(byte(0x12A24C)) == 01 && prior(byte(0x12A24E)) == 01 &&
+                      byte(0x12A24C) == 05 && byte(0x12A24E) == 05
+                       
+)
 
 
 // $12A258: [8 BIT] Power Card Quantity
@@ -911,7 +916,37 @@ achievement(title = "Happy Home Designer", description = "Unlock every house ite
             trigger = houseUnlockCount() && prevHouseUnlockCount() == 59 
 )
 
-
+//Dict of bit corresponding to the character number
+charNumToUnlockBit = {
+                         1: bit5(0x12a423),  2: bit6(0x12a423),  3: bit7(0x12a423),  4: bit0(0x12a424),  5: bit1(0x12a424),
+                         6: bit2(0x12a424),  7: bit3(0x12a424),  8: bit4(0x12a424),  9: bit5(0x12a424), 10: bit6(0x12a424),
+                        11: bit7(0x12a424), 12: bit0(0x12a425), 13: bit1(0x12a425), 14: bit2(0x12a425), 15: bit3(0x12a425),
+                        16: bit4(0x12a425), 17: bit5(0x12a425), 18: bit6(0x12a425), 19: bit7(0x12a425), 20: bit0(0x12a426),
+                        21: bit1(0x12a426), 22: bit2(0x12a426), 23: bit3(0x12a426), 24: bit4(0x12a426), 25: bit5(0x12a426),
+                        26: bit6(0x12a426), 27: bit7(0x12a426), 28: bit0(0x12a427), 29: bit1(0x12a427), 30: bit2(0x12a427),
+                        31: bit3(0x12a427), 32: bit4(0x12a427), 33: bit5(0x12a427), 34: bit6(0x12a427), 35: bit7(0x12a427),
+                        36: bit0(0x12a428), 37: bit1(0x12a428), 38: bit2(0x12a428), 39: bit3(0x12a428), 40: bit4(0x12a428),
+                        41: bit5(0x12a428), 42: bit6(0x12a428)
+                     }
+charNumToName = {
+                         1: "Rosalyn",  2: "Elmira",  3: "DJ Candy",  4: "Goth Boy",  5: "Watanabe",
+                         6: "Dr. F",  7: "Gino",  8: "Roxie",  9: "Buddy", 10: "Vincent",
+                        11: "Nicole", 12: "Odin", 13: "Poppy", 14: "Violet", 15: "Ginny",
+                        16: "Vic", 17: "Travis", 18: "Trevor", 19: "Aran", 20: "Dolly",
+                        21: "Zoe", 22: "Shirley", 23: "Chaz", 24: "Tim", 25: "Helen",
+                        26: "Ewan", 27: "Tyler", 28: "Ashley", 29: "Joseph", 30: "Olivia",
+                        31: "Sophie", 32: "Charlie", 33: "Marie", 34: "Tracy", 35: "Hawk",
+                        36: "Martin", 37: "Nicki", 38: "Elizabeth", 39: "Emma", 40: "Foster",
+                        41: "King Roland", 42: "MC Emi"
+                }
+                
+for index in range(1, 42){
+    achievement(title = charNumToName[index] + "'s Friend", description = "Befriend " + charNumToName[index] + ", letting you select them for festivals and minigames!" , points = 5,
+                id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
+                trigger = charNumToUnlockBit[index] == 1 && prev(charNumToUnlockBit[index]) == 0  && prev(byte(0x12a24c)) != 0x00     
+                )
+}
+    
 
 
 // $12A79C: [4 BIT] P2 Difficulty
