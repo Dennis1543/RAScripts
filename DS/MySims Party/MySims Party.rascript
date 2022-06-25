@@ -99,6 +99,35 @@ nonScoreGames = {
     Fashion_Reaction: 38,
 }
 
+function currentFestival() => byte(0x12a508)
+Opening_Festival = 0x00
+Happy_Festival = 0x01
+Pretty_Festival = 0x02
+Music_Festival = 0x03
+Bizarre_Festival = 0x04
+Delicious_Festival = 0x05
+Speed_Festival = 0x06
+Horror_Festival = 0x07
+Sports_Festival = 0x08
+Dynamic_Festival = 0x09
+Dream_Festival = 0x0a
+Customizing_Festival = 0x0b
+
+
+festivalTotalMinigames = {
+    Opening_Festival: 3,
+    Happy_Festival: 4,
+    Pretty_Festival: 5,
+    Music_Festival: 6,
+    Bizarre_Festival: 7,
+    Delicious_Festival: 8,
+    Speed_Festival: 10,
+    Horror_Festival: 12,
+    Sports_Festival: 14,
+    Dynamic_Festival: 16,
+    Dream_Festival: 18,
+    Customizing_Festival: 20
+}
 
 
 // $09B2B1: [8 BIT] Cutscene Interaction
@@ -137,6 +166,13 @@ achievement(title = "MySims Pro Skater", description = "Ride the skateboard in t
             id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
             trigger = byte(0x12a24e) == 0x03 && byte(0x12a24c) == 0x03 && //In Seaside
             (byte(0x0975be) == 0x11 || byte(0x0975be) == 0x12) && //On the dock
+            byte(0x09B2B1) == 0x57 && prior(byte(0x09B2B1)) == 0xaf //Activate Animation
+)
+
+achievement(title = "Money DOES grow on trees!", description = "Shake the money tree in the Residential Area.", points = 1,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = byte(0x12a24e) == 0x02 && byte(0x12a24c) == 0x02 && //In Residentail area
+            (byte(0x0975be) == 0xf7) && //Near the Tree
             byte(0x09B2B1) == 0x57 && prior(byte(0x09B2B1)) == 0xaf //Activate Animation
 )
 
@@ -396,7 +432,6 @@ achievement(title = "Is This Strangetown?", description = "Unlock and visit the 
 //          ff = Not Discovered
 // $12A28B: [8 BIT] Let Me See Card Quantity
 //          ff = Not Discovered
-
 // $12A296: [8 BIT] Layered Black Hair Quantity
 //          DEFAULT UNLOCKED
 // $12A297: [8 BIT] Layered Brown Hair Quantity
@@ -1079,6 +1114,138 @@ achievement(title = "Customizing Festival Winner", description = "Win the Custom
             id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
             trigger = bit3(0x12A3E1) == 1 && prev(bit3(0x12A3E1)) == 0 && 
             byte(0x12a24c) == 0xcf && prev(byte(0x12a24c)) != 0x00 //at the festival hall, not loading in from menu
+)
+
+achievement(title = "Opening Festival Master", description = "Win the Opening Festival with all CPUs on Powerful without using any cards.", points = 5,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentFestival() == Opening_Festival && byte(0x12a50a) == festivalTotalMinigames[Opening_Festival] &&
+                      byte(0x08b098) == 0x18 && byte(0x0ac797) == 0x4f && //festival finish screen
+                      (bit1(0x12a79c) == 1 && bit2(0x12a79c) == 1) && //p2 powerful
+                      (bit1(0x12a9e0) == 1 && bit2(0x12a9e0) == 1) && //p3 powerful
+                      (bit1(0x12ac24) == 1 && bit2(0x12ac24) == 1) && //p4 powerful
+                      byte(0x12a559) == 0x02 && //never used card
+                      byte(0x09c891) == 0x00 //1st place on the leaderboard (win)                      
+)
+
+achievement(title = "Happy Festival Master", description = "Win the Happy Festival with all CPUs on Powerful without using any cards.", points = 5,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentFestival() == Happy_Festival && byte(0x12a50a) == festivalTotalMinigames[Happy_Festival] &&
+                      byte(0x08b098) == 0x18 && byte(0x0ac797) == 0x4f && //festival finish screen
+                      (bit1(0x12a79c) == 1 && bit2(0x12a79c) == 1) && //p2 powerful
+                      (bit1(0x12a9e0) == 1 && bit2(0x12a9e0) == 1) && //p3 powerful
+                      (bit1(0x12ac24) == 1 && bit2(0x12ac24) == 1) && //p4 powerful
+                      byte(0x12a559) == 0x02 && //never used card
+                      byte(0x09c891) == 0x00 //1st place on the leaderboard (win)                      
+)
+
+achievement(title = "Pretty Festival Master", description = "Win the Pretty Festival with all CPUs on Powerful without using any cards.", points = 10,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentFestival() == Pretty_Festival && byte(0x12a50a) == festivalTotalMinigames[Pretty_Festival] &&
+                      byte(0x08b098) == 0x18 && byte(0x0ac797) == 0x4f && //festival finish screen
+                      (bit1(0x12a79c) == 1 && bit2(0x12a79c) == 1) && //p2 powerful
+                      (bit1(0x12a9e0) == 1 && bit2(0x12a9e0) == 1) && //p3 powerful
+                      (bit1(0x12ac24) == 1 && bit2(0x12ac24) == 1) && //p4 powerful
+                      byte(0x12a559) == 0x02 && //never used card
+                      byte(0x09c891) == 0x00 //1st place on the leaderboard (win)                      
+)
+
+achievement(title = "Music Festival Master", description = "Win the Music Festival with all CPUs on Powerful without using any cards.", points = 10,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentFestival() == Music_Festival && byte(0x12a50a) == festivalTotalMinigames[Music_Festival] &&
+                      byte(0x08b098) == 0x18 && byte(0x0ac797) == 0x4f && //festival finish screen
+                      (bit1(0x12a79c) == 1 && bit2(0x12a79c) == 1) && //p2 powerful
+                      (bit1(0x12a9e0) == 1 && bit2(0x12a9e0) == 1) && //p3 powerful
+                      (bit1(0x12ac24) == 1 && bit2(0x12ac24) == 1) && //p4 powerful
+                      byte(0x12a559) == 0x02 && //never used card
+                      byte(0x09c891) == 0x00 //1st place on the leaderboard (win)                      
+)
+
+achievement(title = "Bizarre Festival Master", description = "Win the Bizarre Festival with all CPUs on Powerful without using any cards.", points = 10,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentFestival() == Bizarre_Festival && byte(0x12a50a) == festivalTotalMinigames[Bizarre_Festival] &&
+                      byte(0x08b098) == 0x18 && byte(0x0ac797) == 0x4f && //festival finish screen
+                      (bit1(0x12a79c) == 1 && bit2(0x12a79c) == 1) && //p2 powerful
+                      (bit1(0x12a9e0) == 1 && bit2(0x12a9e0) == 1) && //p3 powerful
+                      (bit1(0x12ac24) == 1 && bit2(0x12ac24) == 1) && //p4 powerful
+                      byte(0x12a559) == 0x02 && //never used card
+                      byte(0x09c891) == 0x00 //1st place on the leaderboard (win)                      
+)
+
+achievement(title = "Delicious Festival Master", description = "Win the Delicious Festival with all CPUs on Powerful without using any cards.", points = 10,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentFestival() == Delicious_Festival && byte(0x12a50a) == festivalTotalMinigames[Delicious_Festival] &&
+                      byte(0x08b098) == 0x18 && byte(0x0ac797) == 0x4f && //festival finish screen
+                      (bit1(0x12a79c) == 1 && bit2(0x12a79c) == 1) && //p2 powerful
+                      (bit1(0x12a9e0) == 1 && bit2(0x12a9e0) == 1) && //p3 powerful
+                      (bit1(0x12ac24) == 1 && bit2(0x12ac24) == 1) && //p4 powerful
+                      byte(0x12a559) == 0x02 && //never used card
+                      byte(0x09c891) == 0x00 //1st place on the leaderboard (win)                      
+)
+
+achievement(title = "Speed Festival Master", description = "Win the Speed Festival with all CPUs on Powerful without using any cards.", points = 10,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentFestival() == Speed_Festival && byte(0x12a50a) == festivalTotalMinigames[Speed_Festival] &&
+                      byte(0x08b098) == 0x18 && byte(0x0ac797) == 0x4f && //festival finish screen
+                      (bit1(0x12a79c) == 1 && bit2(0x12a79c) == 1) && //p2 powerful
+                      (bit1(0x12a9e0) == 1 && bit2(0x12a9e0) == 1) && //p3 powerful
+                      (bit1(0x12ac24) == 1 && bit2(0x12ac24) == 1) && //p4 powerful
+                      byte(0x12a559) == 0x02 && //never used card
+                      byte(0x09c891) == 0x00 //1st place on the leaderboard (win)                      
+)
+
+achievement(title = "Horror Festival Master", description = "Win the Horror Festival with all CPUs on Powerful without using any cards.", points = 10,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentFestival() == Horror_Festival && byte(0x12a50a) == festivalTotalMinigames[Horror_Festival] &&
+                      byte(0x08b098) == 0x18 && byte(0x0ac797) == 0x4f && //festival finish screen
+                      (bit1(0x12a79c) == 1 && bit2(0x12a79c) == 1) && //p2 powerful
+                      (bit1(0x12a9e0) == 1 && bit2(0x12a9e0) == 1) && //p3 powerful
+                      (bit1(0x12ac24) == 1 && bit2(0x12ac24) == 1) && //p4 powerful
+                      byte(0x12a559) == 0x02 && //never used card
+                      byte(0x09c891) == 0x00 //1st place on the leaderboard (win)                      
+)
+
+achievement(title = "Sports Festival Master", description = "Win the Sports Festival with all CPUs on Powerful without using any cards.", points = 10,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentFestival() == Sports_Festival && byte(0x12a50a) == festivalTotalMinigames[Sports_Festival] &&
+                      byte(0x08b098) == 0x18 && byte(0x0ac797) == 0x4f && //festival finish screen
+                      (bit1(0x12a79c) == 1 && bit2(0x12a79c) == 1) && //p2 powerful
+                      (bit1(0x12a9e0) == 1 && bit2(0x12a9e0) == 1) && //p3 powerful
+                      (bit1(0x12ac24) == 1 && bit2(0x12ac24) == 1) && //p4 powerful
+                      byte(0x12a559) == 0x02 && //never used card
+                      byte(0x09c891) == 0x00 //1st place on the leaderboard (win)                      
+)
+
+achievement(title = "Dynamic Festival Master", description = "Win the Dynamic Festival with all CPUs on Powerful without using any cards.", points = 25,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentFestival() == Dynamic_Festival && byte(0x12a50a) == festivalTotalMinigames[Dynamic_Festival] &&
+                      byte(0x08b098) == 0x18 && byte(0x0ac797) == 0x4f && //festival finish screen
+                      (bit1(0x12a79c) == 1 && bit2(0x12a79c) == 1) && //p2 powerful
+                      (bit1(0x12a9e0) == 1 && bit2(0x12a9e0) == 1) && //p3 powerful
+                      (bit1(0x12ac24) == 1 && bit2(0x12ac24) == 1) && //p4 powerful
+                      byte(0x12a559) == 0x02 && //never used card
+                      byte(0x09c891) == 0x00 //1st place on the leaderboard (win)                      
+)
+
+achievement(title = "Dream Festival Master", description = "Win the Dream Festival with all CPUs on Powerful without using any cards.", points = 25,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentFestival() == Dream_Festival && byte(0x12a50a) == festivalTotalMinigames[Dream_Festival] &&
+                      byte(0x08b098) == 0x18 && byte(0x0ac797) == 0x4f && //festival finish screen
+                      (bit1(0x12a79c) == 1 && bit2(0x12a79c) == 1) && //p2 powerful
+                      (bit1(0x12a9e0) == 1 && bit2(0x12a9e0) == 1) && //p3 powerful
+                      (bit1(0x12ac24) == 1 && bit2(0x12ac24) == 1) && //p4 powerful
+                      byte(0x12a559) == 0x02 && //never used card
+                      byte(0x09c891) == 0x00 //1st place on the leaderboard (win)                      
+)
+
+achievement(title = "Customizing Festival Master", description = "Win the Customizing Festival with all CPUs on Powerful without using any cards.", points = 50,
+            id = 0, badge = "00000", published = "15/6/2022", modified = "15/6/2022",
+            trigger = currentFestival() == Customizing_Festival && byte(0x12a50a) == festivalTotalMinigames[Customizing_Festival] &&
+                      byte(0x08b098) == 0x18 && byte(0x0ac797) == 0x4f && //festival finish screen
+                      (bit1(0x12a79c) == 1 && bit2(0x12a79c) == 1) && //p2 powerful
+                      (bit1(0x12a9e0) == 1 && bit2(0x12a9e0) == 1) && //p3 powerful
+                      (bit1(0x12ac24) == 1 && bit2(0x12ac24) == 1) && //p4 powerful
+                      byte(0x12a559) == 0x02 && //never used card
+                      byte(0x09c891) == 0x00 //1st place on the leaderboard (win)                      
 )
 
 // $12A3F0: [8 BIT] Character Unlock Flags 1
@@ -1919,6 +2086,345 @@ achievement(title = "GOOOOOOAL!!!", description = "Kick the soccer ball into the
 //          Bit 1 = MC Emi
 //          Bit 2 = Mitch
 
+function locationLookup() => byte(0x12a24c)
+
+locations = {
+    0x00 : "the Title Screen",
+    0x01 : "the Downtown Main Area",
+    0x02 : "the Residential Main Area",
+    0x03 : "the Sea Side Main Area",
+    0x04 : "the Plains Main Area",
+    0x05 : "the Desert Main Area",
+    0x2d : "Nicole's Boutique",
+    0x2e : "Chef Watanabe's Sushi Restaurant",
+    0x2f : "Chef Gino's Italian Restaurant",
+    0x30 : "Joseph's House",
+    0x31 : "Buddy's Hotel",
+    0x32 : "Roxie's Ice Cream Shop",
+    0x33 : "Ginny's House",
+    0x65 : "Olivia's House",
+    0x66 : "Trevor's Theatre",
+    0x67 : "Chef Charlie's Cake Shop",
+    0x68 : "Helen's House",
+    0x69 : "Poppy's Flower Shop",
+    0x6a : "Chaz's House",
+    0x6b : "Martin's House",
+    0x91 : "Ashley's Flower Shop",
+    0x92 : "Goth Boy's Manor",
+    0x93 : "Marie's Secret Hideout",
+    0x94 : "Sophie's Furniture Shop",
+    0x95 : "Foster's House",
+    0xc8 : "My House",
+    0xc9 : "Dolly's Costume Shop",
+    0xca : "Club Candy",
+    0xcb : "Vic's Card Shop",
+    0xcc : "Shirley's Hair Salon",
+    0xcd : "Violet's House",
+    0xce : "Nicki's House",
+    0xcf : "The Festival Hall",
+    0xd0 : "The Police Station",
+    0xd1 : "Tyler's Clothing Store",
+    0xd2 : "Emma's House",
+    0xd3 : "the Town Hall",
+    0xd4 : "Elmira's Library",
+    0xf5 : "Aran's House",
+    0xf6 : "Dr.F's Lab",
+    0xf7 : "Zoe's House",
+    0xf8 : "Tracy's House",
+    0xf9 : "Vincent's Museum"
+}
+
+function festivalLookup() => byte(0x12a508)
+
+festivals = {
+    0x00 : "Opening Festival",
+    0x01 : "Happy Festival",
+    0x02 : "Pretty Festival",
+    0x03 : "Music Festival",
+    0x04 : "Bizarre Festival",
+    0x05 : "Delicious Festival",
+    0x06 : "Speed Festival",
+    0x07 : "Horror Festival",
+    0x08 : "Sports Festival",
+    0x09 : "Dynamic Festival",
+    0x0a : "Dream Festival",
+    0x0b : "Customizing Festival"
+}
+
+function scoreLookup() => word(0x12a774)
+
+function minigameLookup() => byte(0x06bfbc)
+
+minigames = {
+    0x01 : "Pass and Check" ,
+    0x02 : "Hush Hush Library Rush",
+    0x03 : "My Mix Masters",
+    0x04 : "Haunted Hunted",
+    0x05 : "Sushi Scramble",
+    0x06 : "Chemistry Calamity",
+    0x07 : "Spaghetti Spin Off",
+    0x08 : "Soft Service",
+    0x09 : "Vroom Service",
+    0x0a : "Skull Finder",
+    0x0b : "Clap Happy",
+    0x0c : "Air Guitar Star",
+    0x0d : "Okay Bouquet",
+    0x0e : "Petal Platform Peril",
+    0x0f : "Keys to Success",
+    0x10 : "Mallet Melee",
+    0x11 : "Signal Search",
+    0x12 : "Spotlight Please",
+    0x13 : "Sim-Fu Showdown",
+    0x14 : "Fashion Mogul",
+    0x15 : "Crystal Clear",
+    0x16 : "Sudsy Salon",
+    0x17 : "Skating Scamper",
+    0x18 : "Soccer Bounce",
+    0x19 : "Bus! Stop!",
+    0x1a : "Catch the Crook",
+    0x1b : "Clothing Cut Out",
+    0x1c : "Pretty Pottery",
+    0x1d : "Gone Fishing",
+    0x1e : "Hidden Treasures",
+    0x1f : "Sleeping Sophie",
+    0x20 : "Pastry Puzzle",
+    0x21 : "Hang Gliding Hurricane",
+    0x22 : "Fortune Finders",
+    0x23 : "Shuffle Cup",
+    0x24 : "Plane Pop",
+    0x25 : "Bumper Boat Battle",
+    0x26 : "Fashion Reaction",
+    0x27 : "Perfect Slot Jackpot",
+    0x28 : "Spotting Safari"
+}
+
+letters = {
+    0x00 : "",
+    0x20 : "",
+    0x21 : "!",
+    0x22 : "",
+    0x23 : "#",
+    0x24 : "$",
+    0x25 : "％",
+    0x26 : "&",
+    0x27 : "'",
+    0x28 : "(",
+    0x29 : ")",
+    0x2A : "*",
+    0x2B : "+",
+    0x2C : ",",
+    0x2D : "-",
+    0x2E : ".",
+    0x2F : "/",
+    0x30 : "0",
+    0x31 : "1",
+    0x32 : "2",
+    0x33 : "3",
+    0x34 : "4",
+    0x35 : "5",
+    0x36 : "6",
+    0x37 : "7",
+    0x38 : "8",
+    0x39 : "9",
+    0x3A : ":",
+    0x3B : ";",
+    0x3C : "<",
+    0x3D : ":",
+    0x3E : ">",
+    0x3F : "?",
+    0x40 : "@",
+    0x41 : "A",
+    0x42 : "B",
+    0x43 : "C",
+    0x44 : "D",
+    0x45 : "E",
+    0x46 : "F",
+    0x47 : "G",
+    0x48 : "H",
+    0x49 : "I",
+    0x4A : "J",
+    0x4B : "K",
+    0x4C : "L",
+    0x4D : "M",
+    0x4E : "N",
+    0x4F : "O",
+    0x50 : "P",
+    0x51 : "Q",
+    0x52 : "R",
+    0x53 : "S",
+    0x54 : "T",
+    0x55 : "U",
+    0x56 : "V",
+    0x57 : "W",
+    0x58 : "X",
+    0x59 : "Y",
+    0x5A : "Z",
+    0x61 : "a",
+    0x62 : "b",
+    0x63 : "c",
+    0x64 : "d",
+    0x65 : "e",
+    0x66 : "f",
+    0x67 : "g",
+    0x68 : "h",
+    0x69 : "i",
+    0x6A : "j",
+    0x6B : "k",
+    0x6C : "l",
+    0x6D : "m",
+    0x6E : "n",
+    0x6F : "o",
+    0x70 : "p",
+    0x71 : "q",
+    0x72 : "r",
+    0x73 : "s",
+    0x74 : "t",
+    0x75 : "u",
+    0x76 : "v",
+    0x77 : "w",
+    0x78 : "x",
+    0x79 : "y",
+    0x7A : "z",
+}
+
+
+
+rich_presence_conditional_display( byte(0x12a24c) == 0x00 && byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 && word(0x12a774) == 0 &&  minigameLookup() != 0,  
+                                  "Playing {16} as {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15} in Minigame Mode",
+                                  rich_presence_lookup("Letter1", byte(0x12a56c), letters),
+                                  rich_presence_lookup("Letter2", byte(0x12a56e), letters),
+                                  rich_presence_lookup("Letter3", byte(0x12a570), letters),
+                                  rich_presence_lookup("Letter4", byte(0x12a572), letters),
+                                  rich_presence_lookup("Letter5", byte(0x12a574), letters),
+                                  rich_presence_lookup("Letter6", byte(0x12a576), letters),
+                                  rich_presence_lookup("Letter7", byte(0x12a578), letters),
+                                  rich_presence_lookup("Letter8", byte(0x12a57a), letters),
+                                  rich_presence_lookup("Letter9", byte(0x12a57c), letters),
+                                  rich_presence_lookup("Letter10", byte(0x12a57e), letters),
+                                  rich_presence_lookup("Letter11", byte(0x12a580), letters),
+                                  rich_presence_lookup("Letter12", byte(0x12a582), letters),
+                                  rich_presence_lookup("Letter13", byte(0x12a584), letters),
+                                  rich_presence_lookup("Letter14", byte(0x12a586), letters),
+                                  rich_presence_lookup("Letter15", byte(0x12a588), letters),
+                                  rich_presence_lookup("Letter16", byte(0x12a58a), letters),
+                                  rich_presence_lookup("Minigame", minigameLookup(), minigames)
+                                  
+                                  ) 
+
+rich_presence_conditional_display( byte(0x12a24c) == 0xcf && byte(0x0a0095) != 0x1e && byte(0x097cf3) == 0x00 &&  byte(0x0a009d) != 0x1c && ( byte(0x0ac797) == 0x0b || byte(0x0ac797) == 0x64 
+                                    || byte(0x0ac797) == 0x73 || byte(0x0ac797) == 0x80 || byte(0x0ac797) == 0x3c || byte(0x0ac797) == 0x03 || byte(0x0ac797) == 0x00) ,  
+                                  "Playing {16} as {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15} in the {17}",                                  
+                                  rich_presence_lookup("Letter1", byte(0x12a56c), letters),
+                                  rich_presence_lookup("Letter2", byte(0x12a56e), letters),
+                                  rich_presence_lookup("Letter3", byte(0x12a570), letters),
+                                  rich_presence_lookup("Letter4", byte(0x12a572), letters),
+                                  rich_presence_lookup("Letter5", byte(0x12a574), letters),
+                                  rich_presence_lookup("Letter6", byte(0x12a576), letters),
+                                  rich_presence_lookup("Letter7", byte(0x12a578), letters),
+                                  rich_presence_lookup("Letter8", byte(0x12a57a), letters),
+                                  rich_presence_lookup("Letter9", byte(0x12a57c), letters),
+                                  rich_presence_lookup("Letter10", byte(0x12a57e), letters),
+                                  rich_presence_lookup("Letter11", byte(0x12a580), letters),
+                                  rich_presence_lookup("Letter12", byte(0x12a582), letters),
+                                  rich_presence_lookup("Letter13", byte(0x12a584), letters),
+                                  rich_presence_lookup("Letter14", byte(0x12a586), letters),
+                                  rich_presence_lookup("Letter15", byte(0x12a588), letters),
+                                  rich_presence_lookup("Letter16", byte(0x12a58a), letters),
+                                  rich_presence_lookup("Minigame", minigameLookup(), minigames),
+                                  rich_presence_lookup("Festival", festivalLookup(), festivals)
+                                  )                                  
+                                  
+rich_presence_conditional_display( byte(0x12a24c) == 0xcf && word(0x12a774) != 0, 
+                                    "Competing in the {16} with {17} points as {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}",
+                                  rich_presence_lookup("Letter1", byte(0x12a56c), letters),
+                                  rich_presence_lookup("Letter2", byte(0x12a56e), letters),
+                                  rich_presence_lookup("Letter3", byte(0x12a570), letters),
+                                  rich_presence_lookup("Letter4", byte(0x12a572), letters),
+                                  rich_presence_lookup("Letter5", byte(0x12a574), letters),
+                                  rich_presence_lookup("Letter6", byte(0x12a576), letters),
+                                  rich_presence_lookup("Letter7", byte(0x12a578), letters),
+                                  rich_presence_lookup("Letter8", byte(0x12a57a), letters),
+                                  rich_presence_lookup("Letter9", byte(0x12a57c), letters),
+                                  rich_presence_lookup("Letter10", byte(0x12a57e), letters),
+                                  rich_presence_lookup("Letter11", byte(0x12a580), letters),
+                                  rich_presence_lookup("Letter12", byte(0x12a582), letters),
+                                  rich_presence_lookup("Letter13", byte(0x12a584), letters),
+                                  rich_presence_lookup("Letter14", byte(0x12a586), letters),
+                                  rich_presence_lookup("Letter15", byte(0x12a588), letters),
+                                  rich_presence_lookup("Letter16", byte(0x12a58a), letters),
+                                  rich_presence_lookup("Festival", festivalLookup(), festivals),
+                                  rich_presence_value("Current Score", scoreLookup())
+                                  )
+                                  
+rich_presence_conditional_display( byte(0x12a24c) != 0x00 && byte(0x0ac797) == 0x5a,  "Choosing a Festival as {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}",
+                                  rich_presence_lookup("Letter1", byte(0x12a56c), letters),
+                                  rich_presence_lookup("Letter2", byte(0x12a56e), letters),
+                                  rich_presence_lookup("Letter3", byte(0x12a570), letters),
+                                  rich_presence_lookup("Letter4", byte(0x12a572), letters),
+                                  rich_presence_lookup("Letter5", byte(0x12a574), letters),
+                                  rich_presence_lookup("Letter6", byte(0x12a576), letters),
+                                  rich_presence_lookup("Letter7", byte(0x12a578), letters),
+                                  rich_presence_lookup("Letter8", byte(0x12a57a), letters),
+                                  rich_presence_lookup("Letter9", byte(0x12a57c), letters),
+                                  rich_presence_lookup("Letter10", byte(0x12a57e), letters),
+                                  rich_presence_lookup("Letter11", byte(0x12a580), letters),
+                                  rich_presence_lookup("Letter12", byte(0x12a582), letters),
+                                  rich_presence_lookup("Letter13", byte(0x12a584), letters),
+                                  rich_presence_lookup("Letter14", byte(0x12a586), letters),
+                                  rich_presence_lookup("Letter15", byte(0x12a588), letters),
+                                  rich_presence_lookup("Letter16", byte(0x12a58a), letters)
+                )
+
+rich_presence_conditional_display( byte(0x12a24c) != 0x00 && byte(0x0ac797) == 0xd1 || byte(0x0ac797) == 0x62,  
+                                "Starting the {16} playing as {0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}",
+                                  rich_presence_lookup("Letter1", byte(0x12a56c), letters),
+                                  rich_presence_lookup("Letter2", byte(0x12a56e), letters),
+                                  rich_presence_lookup("Letter3", byte(0x12a570), letters),
+                                  rich_presence_lookup("Letter4", byte(0x12a572), letters),
+                                  rich_presence_lookup("Letter5", byte(0x12a574), letters),
+                                  rich_presence_lookup("Letter6", byte(0x12a576), letters),
+                                  rich_presence_lookup("Letter7", byte(0x12a578), letters),
+                                  rich_presence_lookup("Letter8", byte(0x12a57a), letters),
+                                  rich_presence_lookup("Letter9", byte(0x12a57c), letters),
+                                  rich_presence_lookup("Letter10", byte(0x12a57e), letters),
+                                  rich_presence_lookup("Letter11", byte(0x12a580), letters),
+                                  rich_presence_lookup("Letter12", byte(0x12a582), letters),
+                                  rich_presence_lookup("Letter13", byte(0x12a584), letters),
+                                  rich_presence_lookup("Letter14", byte(0x12a586), letters),
+                                  rich_presence_lookup("Letter15", byte(0x12a588), letters),
+                                  rich_presence_lookup("Letter16", byte(0x12a58a), letters),
+                                  rich_presence_lookup("Festival", festivalLookup(), festivals)
+)
+                                  
+                                  
+rich_presence_conditional_display( byte(0x12a24c) != 0x00,  
+                                    "{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15} is exploring {16} with {17} Simoleons | {18} Total Festival Points",
+                                  rich_presence_lookup("Letter1", byte(0x12a56c), letters),
+                                  rich_presence_lookup("Letter2", byte(0x12a56e), letters),
+                                  rich_presence_lookup("Letter3", byte(0x12a570), letters),
+                                  rich_presence_lookup("Letter4", byte(0x12a572), letters),
+                                  rich_presence_lookup("Letter5", byte(0x12a574), letters),
+                                  rich_presence_lookup("Letter6", byte(0x12a576), letters),
+                                  rich_presence_lookup("Letter7", byte(0x12a578), letters),
+                                  rich_presence_lookup("Letter8", byte(0x12a57a), letters),
+                                  rich_presence_lookup("Letter9", byte(0x12a57c), letters),
+                                  rich_presence_lookup("Letter10", byte(0x12a57e), letters),
+                                  rich_presence_lookup("Letter11", byte(0x12a580), letters),
+                                  rich_presence_lookup("Letter12", byte(0x12a582), letters),
+                                  rich_presence_lookup("Letter13", byte(0x12a584), letters),
+                                  rich_presence_lookup("Letter14", byte(0x12a586), letters),
+                                  rich_presence_lookup("Letter15", byte(0x12a588), letters),
+                                  rich_presence_lookup("Letter16", byte(0x12a58a), letters),
+                                  rich_presence_lookup("Location", locationLookup(), locations),
+                                  rich_presence_value( "Simoleons", dword(0x12a154) ),
+                                  rich_presence_value("Total Fest Points", dword(0x12af98) )
+                                  )
+                                  
+
+                                  
+                                  
+rich_presence_conditional_display( byte(0x12a24c) == 0x00, "Browsing The Menus")
+rich_presence_display( "Playing MySims Party") //Basic default catch case                     
 
 function charUnlockCount()
 {
@@ -1995,24 +2501,24 @@ function minigameTimeLeaderboardGT(id, name, minigame_id)
     }
 }
 
-function minigameTimeLeaderboardLT()
+
+
+function festivalLeaderboard(festivalstring, festivalname)
 {
-   leaderboard(name, "Get the High Score in " + name + ".",
-        start = currentMinigameID() == minigame_id && isMinigameStarted(),
-        cancel = byte(0x0a0095) == 0x1e && byte(0x097cf1) == 0x00 && byte(0x09c050) == 0x01, //Check that (1) Pause Menu Opened (2) Minigame is Paused (3) Player Quit Game
-        submit = byte(0x0a0095) != 0x1e && byte(0x097cf1) == 0x01 && byte(0x0ac48e) == 0x00, //Check that (1) Pause Menu NOT opened (2) Minigame is Not Paused (3) Minigame finished (4) Check that time submission is > 0
-        value = 60,
-        format = "FRAMES"
-   )
+    leaderboard(festivalstring, "Get the High Score in the " + festivalstring + ".",
+        start = byte(0x08b098) == 0x08 && byte(0x0ac797) == 0x4f && currentFestival() == festivalname && byte(0x12a50a) == festivalTotalMinigames[festivalname],
+        cancel = always_false(),
+        submit = byte(0x08b098) == 0x18 && byte(0x0ac797) == 0x4f && currentFestival() == festivalname && byte(0x12a50a) == festivalTotalMinigames[festivalname],
+        value = word(0x12a774)
+    )
 }
+
 
 
 //Time-Based Game Leaderboards
     //GT Leaderboards
     minigameTimeLeaderboardGT(0, "Bus! Stop!", Bus_Stop)
     minigameTimeLeaderboardGT(0, "Spotlight Please!", Spotlight_Please)
-    
-    //LT Leaderboards Consider adding a frame check to add timers to other games without 'timers'
     
 
 //Score-Based Game Leaderboards                                                                                                                                                                                   
@@ -2043,6 +2549,25 @@ function minigameTimeLeaderboardLT()
     minigameScoreLeaderboard(0, "Plane Pop", Plane_Pop)
     minigameScoreLeaderboard(0, "Perfect Slot Jackpot", Perfect_Slot_Jackpot)
     minigameScoreLeaderboard(0, "Spotting Safari", Spotting_Safari)
+
+    //Festival Score Leaderboards
+    festivalLeaderboard("Opening Festival", Opening_Festival)
+    festivalLeaderboard("Happy Festival", Happy_Festival)
+    festivalLeaderboard("Pretty Festival", Pretty_Festival)
+    festivalLeaderboard("Music Festival", Music_Festival)
+    festivalLeaderboard("Bizarre Festival", Bizarre_Festival)
+    festivalLeaderboard("Delicious Festival", Delicious_Festival)
+    festivalLeaderboard("Speed Festival", Speed_Festival)
+    festivalLeaderboard("Horror Festival", Horror_Festival)
+    festivalLeaderboard("Sports Festival", Sports_Festival)
+    festivalLeaderboard("Dynamic Festival", Dynamic_Festival)
+    festivalLeaderboard("Dream Festival", Dream_Festival)
+    festivalLeaderboard("Customizing Festival", Customizing_Festival)
+
+
+
+
+
 
 
 
