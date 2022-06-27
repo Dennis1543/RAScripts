@@ -328,572 +328,11 @@ achievement(title = "Is This Strangetown?", description = "Unlock and visit the 
 )
 
 
-// $12A258: [8 BIT] Power Card Quantity
-//          ff = Not Discovered
-// $12A259: [8 BIT] Speed Card Quantity
-//          ff = Not Discovered
-// $12A25A: [8 BIT] Technique Card Quantity
-//          ff = Not Discovered
-// $12A25B: [8 BIT] Tension Card Quantity
-//          ff = Not Discovered
-// $12A25C: [8 BIT] Hi-Power Card Quantity
-//          ff = Not Discovered
-// $12A25D: [8 BIT] Hi-Speed Card Quantity
-//          ff = Not Discovered
-// $12A25E: [8 BIT] Hi-Technique Card Quantity
-//          ff = Not Discovered
-// $12A25F: [8 BIT] Hi-Tension Card Quantity
-//          ff = Not Discovered
-// $12A260: [8 BIT] Full Power Card Quantity
-//          ff = Not Discovered
-// $12A261: [8 BIT] Full Speed Card Quantity
-//          ff = Not Discovered
-// $12A262: [8 BIT] Full Technique Card Quantity
-//          ff = Not Discovered
-// $12A263: [8 BIT] Full Tension Card Quantity
-//          ff = Not Discovered
-// $12A264: [8 BIT] Stamina Card Quantity
-//          ff = Not Discovered
-// $12A265: [8 BIT] Recovery Card Quantity
-//          ff = Not Discovered
-// $12A266: [8 BIT] Hi Recovery Card Quantity
-//          ff = Not Discovered
-// $12A267: [8 BIT] Full Recovery Card Quantity
-//          ff = Not Discovered
-// $12A268: [8 BIT] Medical Card Quantity
-//          ff = Not Discovered
-// $12A269: [8 BIT] Hospital Card Quantity
-//          ff = Not Discovered
-// $12A26A: [8 BIT] Gamble Card Quantity
-//          ff = Not Discovered
-// $12A26B: [8 BIT] Hero Card Quantity
-//          ff = Not Discovered
-// $12A26C: [8 BIT] Super Hero Card Quantity
-//          ff = Not Discovered
-// $12A26D: [8 BIT] Hero Squad Card Quantity
-//          ff = Not Discovered
-// $12A26E: [8 BIT] Invincible Card Quantity
-//          ff = Not Discovered
-// $12A26F: [8 BIT] All Powerful Card Quantity
-//          ff = Not Discovered
-// $12A270: [8 BIT] Seal Card Quantity
-//          ff = Not Discovered
-// $12A271: [8 BIT] Random Sim Card Quantity
-//          ff = Not Discovered
-// $12A272: [8 BIT] Seal All Card Quantity
-//          ff = Not Discovered
-// $12A273: [8 BIT] All Random Sims Card Quantity
-//          ff = Not Discovered
-// $12A274: [8 BIT] Out of Breath Card Quantity
-//          ff = Not Discovered
-// $12A275: [8 BIT] Capture Card Quantity
-//          ff = Not Discovered
-// $12A276: [8 BIT] Capture All Card Quantity
-//          ff = Not Discovered
-// $12A277: [8 BIT] Replacement Card Quantity
-//          ff = Not Discovered
-// $12A278: [8 BIT] Weakling Card Quantity
-//          ff = Not Discovered
-// $12A279: [8 BIT] Crybaby Card Quantity
-//          ff = Not Discovered
-// $12A27A: [8 BIT] Lightning Card Quantity
-//          ff = Not Discovered
-// $12A27B: [8 BIT] Accident Card Quantity
-//          ff = Not Discovered
-// $12A27C: [8 BIT] Sleep Card Quantity
-//          ff = Not Discovered
-// $12A27D: [8 BIT] Hibernation Card Quantity
-//          ff = Not Discovered
-// $12A27E: [8 BIT] Repeat Sim Card Quantity
-//          ff = Not Discovered
-// $12A27F: [8 BIT] Destiny Card Quantity
-//          ff = Not Discovered
-// $12A280: [8 BIT] Powerful Card Quantity
-//          ff = Not Discovered
-// $12A281: [8 BIT] Speedy Card Quantity
-//          ff = Not Discovered
-// $12A282: [8 BIT] Technical Card Quantity
-//          ff = Not Discovered
-// $12A283: [8 BIT] Barrier Card Quantity
-//          ff = Not Discovered
-// $12A284: [8 BIT] Counter Card Quantity
-//          ff = Not Discovered
-// $12A285: [8 BIT] Support Card Quantity
-//          ff = Not Discovered
-// $12A286: [8 BIT] Never Tired Card Quantity
-//          ff = Not Discovered
-// $12A287: [8 BIT] Fickle Card Quantity
-//          ff = Not Discovered
-// $12A288: [8 BIT] Handicap Card Quantity
-//          ff = Not Discovered
-// $12A289: [8 BIT] Hi-Handicap Card Quantity
-//          ff = Not Discovered
-// $12A28A: [8 BIT] Lucky Card Quantity
-//          ff = Not Discovered
-// $12A28B: [8 BIT] Let Me See Card Quantity
-//          ff = Not Discovered
-// $12A296: [8 BIT] Layered Black Hair Quantity
-//          DEFAULT UNLOCKED
-// $12A297: [8 BIT] Layered Brown Hair Quantity
-//          DEFAULT UNLOCKED
-// $12A298: [8 BIT] Layered Blonde Hair Quantity
-//          DEFAULT UNLOCKED
-// $12A299: [8 BIT] Short Black Hair Quantity
-//          ff = Not Discovered
-// $12A29A: [8 BIT] Short Brown Hair Quantity
-//          ff = Not Discovered
-// $12A29B: [8 BIT] Short Blonde Hair Quantity
-//          ff = Not Discovered
-// $12A29C: [8 BIT] Medium Black Hair Quantity
-//          ff = Not Discovered
-// $12A29D: [8 BIT] Medium Blonde Hair Quantity
-//          ff = Not Discovered
-// $12A29E: [8 BIT] Short Black Perm Quantity
-//          ff = Not Discovered
-// $12A29F: [8 BIT] Short Blonde Perm Quantity
-//          ff = Not Discovered
-// $12A2A0: [8 BIT] Parted Brown Hair Quantity
-//          ff = Not Discovered
-// $12A2A1: [8 BIT] Parted Blonde Hair Quantity
-//          ff = Not Discovered
-// $12A2A2: [8 BIT] Wavy Red Hair Quantity
-//          ff = Not Discovered
-// $12A2A3: [8 BIT] Wavy Blue Hair Quantity
-//          ff = Not Discovered
-// $12A2A4: [8 BIT] Wavy Green Hair Quantity
-//          ff = Not Discovered
-// $12A2A5: [8 BIT] Matted Blonde Hair Quantity
-//          ff = Not Discovered
-// $12A2A6: [8 BIT] Matted Blue Hair Quantity
-//          ff = Not Discovered
-// $12A2A7: [8 BIT] Flat Top Quantity
-//          ff = Not Discovered
-// $12A2A8: [8 BIT] Blonde Curls Quantity
-//          ff = Not Discovered
-// $12A2A9: [8 BIT] Goth Hair Quantity
-//          ff = Not Discovered
-// $12A2AA: [8 BIT] Short Spiky Hair Quantity
-//          ff = Not Discovered
-// $12A2AB: [8 BIT] Ranger Hat Quantity
-//          ff = Not Discovered
-// $12A2AC: [8 BIT] Grey Parted Hair Quantity
-//          ff = Not Discovered
-// $12A2AD: [8 BIT] Black Bangs Quantity
-//          DEFAULT UNLOCKED
-// $12A2AE: [8 BIT] Brown Bangs Quantity
-//          DEFAULT UNLOCKED
-// $12A2AF: [8 BIT] Blonde Bangs Quantity
-//          DEFAULT UNLOCKED
-// $12A2B0: [8 BIT] Semi-Long Black Quantity
-//          DEFAULT UNLOCKED
-// $12A2B1: [8 BIT] Semi-Long Brown Quantity
-//          DEFAULT UNLOCKED
-// $12A2B2: [8 BIT] Semi-Long Blonde Quantity
-//          DEFAULT UNLOCKED
-// $12A2B3: [8 BIT] Black Pigtail Quantity
-//          ff = Not Discovered
-// $12A2B4: [8 BIT] Brown Pigtail Quantity
-//          ff = Not Discovered
-// $12A2B5: [8 BIT] Blonde Pigtail Quantity
-//          ff = Not Discovered
-// $12A2B6: [8 BIT] Even Brown Hair Quantity
-//          ff = Not Discovered
-// $12A2B7: [8 BIT] Even Blond Hair Quantity
-//          ff = Not Discovered
-// $12A2B8: [8 BIT] Long Black Hair Quantity
-//          ff = Not Discovered
-// $12A2B9: [8 BIT] Long Brown Hair Quantity
-//          ff = Not Discovered
-// $12A2BA: [8 BIT] Long Blonde Hair Quantity
-//          ff = Not Discovered
-// $12A2BB: [8 BIT] Red Extensions Quantity
-//          ff = Not Discovered
-// $12A2BC: [8 BIT] Blue Extensions Quantity
-//          ff = Not Discovered
-// $12A2BD: [8 BIT] Green Extensions Quantity
-//          ff = Not Discovered
-// $12A2BE: [8 BIT] Brown Ponytail Quantity
-//          ff = Not Discovered
-// $12A2BF: [8 BIT] Blonde Ponytail Quantity
-//          ff = Not Discovered
-// $12A2C0: [8 BIT] Wavy Red Perm Quantity
-//          ff = Not Discovered
-// $12A2C1: [8 BIT] Wavy Green Perm Quantity
-//          ff = Not Discovered
-// $12A2C2: [8 BIT] Black Bun Quantity
-//          ff = Not Discovered
-// $12A2C3: [8 BIT] Brown Bun Quantity
-//          ff = Not Discovered
-// $12A2C4: [8 BIT] Red Side Buns Quantity
-//          ff = Not Discovered
-// $12A2C5: [8 BIT] Blue Side Buns Quantity
-//          ff = Not Discovered
-// $12A2C6: [8 BIT] Ribbon Pig Tails Quantity
-//          ff = Not Discovered
-// $12A2C7: [8 BIT] Librarian Hair Quantity
-//          ff = Not Discovered
-// $12A2C8: [8 BIT] Beehive Quantity
-//          ff = Not Discovered
-// $12A2C9: [8 BIT] Long Brown Bangs Quantity
-//          ff = Not Discovered
-// $12A2CA: [8 BIT] Flower Pig Tails Quantity
-//          ff = Not Discovered
-// $12A2CB: [8 BIT] Natural Black Hair Quantity
-//          DEFAULT UNLOCKED
-// $12A2CC: [8 BIT] Natural Brown Hair Quantity
-//          DEFAULT UNLOCKED
-// $12A2CD: [8 BIT] Natural Blonde Hair Quantity
-//          DEFAULT UNLOCKED
-// $12A2CE: [8 BIT] Brown Afro Quantity
-//          ff = Not Discovered
-// $12A2CF: [8 BIT] Blonde Duck Tail Quantity
-//          ff = Not Discovered
-// $12A2D0: [8 BIT] Blonde Mohawk Quantity
-//          ff = Not Discovered
-// $12A2D1: [8 BIT] Bald Quantity
-//          ff = Not Discovered
-// $12A2D2: [8 BIT] Samurai Hair Quantity
-//          ff = Not Discovered
-// $12A2D3: [8 BIT] Short Orange Hair Quantity
-//          ff = Not Discovered
-// $12A2D4: [8 BIT] Baseball Cap Quantity
-//          DEFAULT UNLOCKED
-// $12A2D5: [8 BIT] Newsboy Quantity
-//          ff = Not Discovered
-// $12A2D6: [8 BIT] Graduation Hat Quantity
-//          ff = Not Discovered
-// $12A2D7: [8 BIT] Ten-Gallon Hat Quantity
-//          ff = Not Discovered
-// $12A2D8: [8 BIT] Pirate's Cap Quantity
-//          ff = Not Discovered
-// $12A2D9: [8 BIT] Knitted Cap Quantity
-//          ff = Not Discovered
-// $12A2DA: [8 BIT] DJ Headphones Quantity
-//          ff = Not Discovered
-// $12A2DB: [8 BIT] Flight Goggles Quantity
-//          ff = Not Discovered
-// $12A2DC: [8 BIT] Doggie Hat Quantity
-//          ff = Not Discovered
-// $12A2DD: [8 BIT] Chef's Hat Quantity
-//          ff = Not Discovered
-// $12A2DE: [8 BIT] Sushi Hat Quantity
-//          ff = Not Discovered
-// $12A2DF: [8 BIT] Big Ribbon Quantity
-//          ff = Not Discovered
-// $12A2E0: [8 BIT] Straw Hat Quantity
-//          ff = Not Discovered
-// $12A2E1: [8 BIT] Yellow Stripe Shirt Quantity
-//          DEFAULT UNLOCKED
-// $12A2E2: [8 BIT] Green Stripe Shirt Quantity
-//          ff = Not Discovered
-// $12A2E3: [8 BIT] Blue Stripe Shirt Quantity
-//          ff = Not Discovered
-// $12A2E4: [8 BIT] Red V-Neck Quantity
-//          DEFAULT UNLOCKED
-// $12A2E5: [8 BIT] White V-Neck Quantity
-//          ff = Not Discovered
-// $12A2E6: [8 BIT] Black V-Neck Quantity
-//          ff = Not Discovered
-// $12A2E7: [8 BIT] White Tank Top Quantity
-//          DEFAULT UNLOCKED
-// $12A2E8: [8 BIT] Brown Tank Top Quantity
-//          ff = Not Discovered
-// $12A2E9: [8 BIT] Gray Tank Top Quantity
-//          ff = Not Discovered
-// $12A2EA: [8 BIT] Yellow Hawaiian Quantity
-//          ff = Not Discovered
-// $12A2EB: [8 BIT] Blue Hawaiian Quantity
-//          ff = Not Discovered
-// $12A2EC: [8 BIT] Red Hawaiian Quantity
-//          ff = Not Discovered
-// $12A2ED: [8 BIT] Brown Checkered Quantity
-//          ff = Not Discovered
-// $12A2EE: [8 BIT] Blue Checkered Quantity
-//          ff = Not Discovered
-// $12A2EF: [8 BIT] Green Checkered Quantity
-//          ff = Not Discovered
-// $12A2F0: [8 BIT] Blue Bolero Quantity
-//          DEFAULT UNLOCKED
-// $12A2F1: [8 BIT] Pink Bolero Quantity
-//          ff = Not Discovered
-// $12A2F2: [8 BIT] Green Bolero Quantity
-//          ff = Not Discovered
-// $12A2F3: [8 BIT] Black Frill Shirt Quantity
-//          DEFAULT UNLOCKED
-// $12A2F4: [8 BIT] White Frill Shirt Quantity
-//          ff = Not Discovered
-// $12A2F5: [8 BIT] Red Frill Shirt Quantity
-//          ff = Not Discovered
-// $12A2F6: [8 BIT] Yellow Top Quantity
-//          DEFAULT UNLOCKED
-// $12A2F7: [8 BIT] Pink Top Quantity
-//          ff = Not Discovered
-// $12A2F8: [8 BIT] Blue Top Quantity
-//          ff = Not Discovered
-// $12A2F9: [8 BIT] Black Cool Sweater Quantity
-//          ff = Not Discovered
-// $12A2FA: [8 BIT] Yellow Cool Sweater Quantity
-//          ff = Not Discovered
-// $12A2FB: [8 BIT] Blue Cool Sweater Quantity
-//          ff = Not Discovered
-// $12A2FC: [8 BIT] Blue Denim Jacket Quantity
-//          ff = Not Discovered
-// $12A2FD: [8 BIT] Black Denim Jacket Quantity
-//          ff = Not Discovered
-// $12A2FE: [8 BIT] Purple Camisole Quantity
-//          ff = Not Discovered
-// $12A2FF: [8 BIT] Red Camisole Quantity
-//          ff = Not Discovered
-// $12A300: [8 BIT] White T-Shirt Quantity
-//          DEFAULT UNLOCKED
-// $12A301: [8 BIT] Black T-Shirt Quantity
-//          ff = Not Discovered
-// $12A302: [8 BIT] Blue T-Shirt Quantity
-//          ff = Not Discovered
-// $12A303: [8 BIT] Red T-Shirt Quantity
-//          ff = Not Discovered
-// $12A304: [8 BIT] Orange Hoodie Quantity
-//          DEFAULT UNLOCKED
-// $12A305: [8 BIT] Pink Hoodie Quantity
-//          ff = Not Discovered
-// $12A306: [8 BIT] Blue Trainer Quantity
-//          ff = Not Discovered
-// $12A307: [8 BIT] Red "Trainter" Quantity
-//          ff = Not Discovered
-// $12A308: [8 BIT] Black Jersey Quantity
-//          ff = Not Discovered
-// $12A309: [8 BIT] Blue Jersey Quantity
-//          ff = Not Discovered
-// $12A30A: [8 BIT] Green Camoflage Quantity
-//          ff = Not Discovered
-// $12A30B: [8 BIT] Yellow Camoflage Quantity
-//          ff = Not Discovered
-// $12A30C: [8 BIT] Red Japan Print Quantity
-//          ff = Not Discovered
-// $12A30D: [8 BIT] Blue Japan Print Quantity
-//          ff = Not Discovered
-// $12A30E: [8 BIT] Yellow Japan Print Quantity
-//          ff = Not Discovered
-// $12A30F: [8 BIT] Blue Button Down Quantity
-//          ff = Not Discovered
-// $12A310: [8 BIT] Red Button Down Quantity
-//          ff = Not Discovered
-// $12A311: [8 BIT] Black Check Sweater Quantity
-//          ff = Not Discovered
-// $12A312: [8 BIT] White Check Sweater Quantity
-//          ff = Not Discovered
-// $12A313: [8 BIT] Shirt and Tie Quantity
-//          ff = Not Discovered
-// $12A314: [8 BIT] Sporty Hoodie Quantity
-//          ff = Not Discovered
-// $12A315: [8 BIT] Graduation Gown Quantity
-//          ff = Not Discovered
-// $12A316: [8 BIT] Pirate's Outfit Quantity
-//          ff = Not Discovered
-// $12A317: [8 BIT] Netted Shirt Quantity
-//          ff = Not Discovered
-// $12A318: [8 BIT] Printed T-Shirt Quantity
-//          ff = Not Discovered
-// $12A319: [8 BIT] Green Work Pants Quantity
-//          DEFAULT UNLOCKED
-// $12A31A: [8 BIT] Brown Work Pants Quantity
-//          ff = Not Discovered
-// $12A31B: [8 BIT] Brown Checkered Quantity
-//          DEFAULT UNLOCKED
-// $12A31C: [8 BIT] White Checkered Quantity
-//          ff = Not Discovered
-// $12A31D: [8 BIT] Black Capri Pants Quantity
-//          DEFAULT UNLOCKED
-// $12A31E: [8 BIT] Blue Capri Pants Quantity
-//          ff = Not Discovered
-// $12A31F: [8 BIT] Red Capri Pants Quantity
-//          ff = Not Discovered
-// $12A320: [8 BIT] Green Camoflage Quantity
-//          ff = Not Discovered
-// $12A321: [8 BIT] Yellow Camoflage Quantity
-//          ff = Not Discovered
-// $12A322: [8 BIT] Surfer Shorts Quantity
-//          ff = Not Discovered
-// $12A323: [8 BIT] Printed Pants Quantity
-//          ff = Not Discovered
-// $12A324: [8 BIT] Blue Shorts Quantity
-//          ff = Not Discovered
-// $12A325: [8 BIT] Green Shorts Quantity
-//          ff = Not Discovered
-// $12A326: [8 BIT] Black Pants and Belt Quantity
-//          ff = Not Discovered
-// $12A327: [8 BIT] Blue Pants and Belt Quantity
-//          ff = Not Discovered
-// $12A328: [8 BIT] Blue Check Skirt Quantity
-//          DEFAULT UNLOCKED
-// $12A329: [8 BIT] Purple Check Skirt Quantity
-//          ff = Not Discovered
-// $12A32A: [8 BIT] Black Pleated Skirt Quantity
-//          DEFAULT UNLOCKED
-// $12A32B: [8 BIT] White Pleated Skirt Quantity
-//          ff = Not Discovered
-// $12A32C: [8 BIT] Blue Jean Shorts Quantity
-//          DEFAULT UNLOCKED
-// $12A32D: [8 BIT] Black Jean Shorts Quantity
-//          ff = Not Discovered
-// $12A32E: [8 BIT] Black Long Skirt Quantity
-//          ff = Not Discovered
-// $12A32F: [8 BIT] Blue Long Skirt Quantity
-//          ff = Not Discovered
-// $12A330: [8 BIT] Purple Short Skirt Quantity
-//          ff = Not Discovered
-// $12A331: [8 BIT] Black Short Skirt Quantity
-//          ff = Not Discovered
-// $12A332: [8 BIT] Blue Hot Pants Quantity
-//          ff = Not Discovered
-// $12A333: [8 BIT] Pink Hot Pants Quantity
-//          ff = Not Discovered
-// $12A334: [8 BIT] Brown Check Shirt Quantity
-//          ff = Not Discovered
-// $12A335: [8 BIT] Green Check Shirt Quantity
-//          ff = Not Discovered
-// $12A336: [8 BIT] Frilly Skirt Quantity
-//          ff = Not Discovered
-// $12A337: [8 BIT] Bohemian Skirt Quantity
-//          ff = Not Discovered
-// $12A338: [8 BIT] Black Denim Jeans Quantity
-//          DEFAULT UNLOCKED
-// $12A339: [8 BIT] Blue Denim Jeans Quantity
-//          ff = Not Discovered
-// $12A33A: [8 BIT] White Denim Jeans Quantity
-//          ff = Not Discovered
-// $12A33B: [8 BIT] Black Jeans Quantity
-//          DEFAULT UNLOCKED
-// $12A33C: [8 BIT] Black Jersey Pants Quantity
-//          ff = Not Discovered
-// $12A33D: [8 BIT] Blue Jersey Pants Quantity
-//          ff = Not Discovered
-// $12A33E: [8 BIT] Brown Short Pants Quantity
-//          ff = Not Discovered
-// $12A33F: [8 BIT] Blue Short Pants Quantity
-//          ff = Not Discovered
-// $12A340: [8 BIT] Suspenders Quantity
-//          ff = Not Discovered
-// $12A341: [8 BIT] Blue Jean Quantity
-//          DEFAULT UNLOCKED
-// $12A342: [8 BIT] Black Suit Quantity
-//          ff = Not Discovered
-// $12A343: [8 BIT] White Suit Quantity
-//          ff = Not Discovered
-// $12A344: [8 BIT] School Outfit Quantity
-//          ff = Not Discovered
-// $12A345: [8 BIT] Brown Two Piece Quantity
-//          DEFAULT UNLOCKED
-// $12A346: [8 BIT] White Two Piece Quantity
-//          ff = Not Discovered
-// $12A347: [8 BIT] China Outfit Quantity
-//          ff = Not Discovered
-// $12A348: [8 BIT] Summer Kimono Quantity
-//          ff = Not Discovered
-// $12A349: [8 BIT] Baseball Uniform Quantity
-//          ff = Not Discovered
-// $12A34A: [8 BIT] Tuxedo Quantity
-//          ff = Not Discovered
-// $12A34B: [8 BIT] Bellhop Uniform Quantity
-//          ff = Not Discovered
-// $12A34C: [8 BIT] Brown Suit Quantity
-//          ff = Not Discovered
-// $12A34D: [8 BIT] Blue One-Piece Quantity
-//          DEFAULT UNLOCKED
-// $12A34E: [8 BIT] Green One-Piece Quantity
-//          ff = Not Discovered
-// $12A34F: [8 BIT] White One-Piece Quantity
-//          ff = Not Discovered
-// $12A350: [8 BIT] Red Dress Quantity
-//          ff = Not Discovered
-// $12A351: [8 BIT] Blue Dress Quantity
-//          ff = Not Discovered
-// $12A352: [8 BIT] Bee Stripe Quantity
-//          ff = Not Discovered
-// $12A353: [8 BIT] Black Long Dress Quantity
-//          ff = Not Discovered
-// $12A354: [8 BIT] Long Dress Quantity
-//          ff = Not Discovered
-// $12A355: [8 BIT] Fortune Teller Quantity
-//          ff = Not Discovered
-// $12A356: [8 BIT] Mayor's Suit Quantity
-//          ff = Not Discovered
-// $12A357: [8 BIT] Blue Overalls Quantity
-//          DEFAULT UNLOCKED
-// $12A358: [8 BIT] Red Overalls Quantity
-//          ff = Not Discovered
-// $12A359: [8 BIT] Green Overalls Quantity
-//          ff = Not Discovered
-// $12A35A: [8 BIT] Leather Suit Quantity
-//          ff = Not Discovered
-// $12A35B: [8 BIT] Soccer Uniform Quantity
-//          ff = Not Discovered
-// $12A35C: [8 BIT] Trainer Quantity
-//          ff = Not Discovered
-// $12A35D: [8 BIT] Jump Suit Quantity
-//          ff = Not Discovered
-// $12A35E: [8 BIT] Ninja Outfit Quantity
-//          ff = Not Discovered
-// $12A35F: [8 BIT] Blazer Quantity
-//          ff = Not Discovered
-// $12A360: [8 BIT] Nurse Uniform Quantity
-//          ff = Not Discovered
-// $12A361: [8 BIT] Black Sailor Suit Quantity
-//          ff = Not Discovered
-// $12A362: [8 BIT] Police Uniform Quantity
-//          ff = Not Discovered
-// $12A363: [8 BIT] Chef's Apron Quantity
-//          ff = Not Discovered
-// $12A364: [8 BIT] Black Round Glasses Quantity
-//          DEFAULT UNLOCKED
-// $12A365: [8 BIT] Blue Round Glasses Quantity
-//          ff = Not Discovered
-// $12A366: [8 BIT] Red Round Glasses Quantity
-//          ff = Not Discovered
-// $12A367: [8 BIT] Silver Round Glasses Quantity
-//          ff = Not Discovered
-// $12A368: [8 BIT] Black Square Glasses Quantity
-//          DEFAULT UNLOCKED
-// $12A369: [8 BIT] Blue Square Glasses Quantity
-//          ff = Not Discovered
-// $12A36A: [8 BIT] Red Square Glasses Quantity
-//          ff = Not Discovered
-// $12A36B: [8 BIT] Gold Square Glasses Quantity
-//          ff = Not Discovered
-// $12A36C: [8 BIT] Black Sunglasses Quantity
-//          ff = Not Discovered
-// $12A36D: [8 BIT] Green Sunglasses Quantity
-//          ff = Not Discovered
-// $12A36E: [8 BIT] Red Sunglasses Quantity
-//          ff = Not Discovered
-// $12A36F: [8 BIT] Thick Glasses Quantity
-//          ff = Not Discovered
-// $12A370: [8 BIT] Giant "Suglasses" Quantity
-//          ff = Not Discovered
-// $12A371: [8 BIT] Monocle Quantity
-//          ff = Not Discovered
-// $12A372: [8 BIT] Party Mask Quantity
-//          ff = Not Discovered
-// $12A373: [8 BIT] Joke Glasses Quantity
-//          ff = Not Discovered
-// $12A374: [8 BIT] Fake Moustache Quantity
-//          ff = Not Discovered
-// $12A375: [8 BIT] Fake Pig Nose Quantity
-//          ff = Not Discovered
-// $12A376: [8 BIT] Clown Nose Quantity
-//          ff = Not Discovered
-// $12A377: [8 BIT] Heart Earrings Quantity
-//          ff = Not Discovered
-// $12A378: [8 BIT] Star Earrings Quantity
-//          ff = Not Discovered
-// $12A379: [8 BIT] Cool Sunglasses Quantity
-//          ff = Not Discovered
-// $12A37A: [8 BIT] Crown Quantity
-//          ff = Not Discovered
-// $12A37B: [8 BIT] King Outfit Quantity
+// $12A258 - $12A28B: [8 BIT] Card Quantities
 //          ff = Not Discovered
 
-
+// $12A296 - $12A37B : [8 BIT] Fashion Item Quantities
+//          ff = Not Discovered
 
 // 0x12A370 Suglasses 0x12A307 Red Trainter
 achievement(title = "Enable Spellcheck", description = "Unlock the 'Giant Suglasses' and the 'Red Trainter' fashion items.", points = 2,
@@ -901,10 +340,6 @@ achievement(title = "Enable Spellcheck", description = "Unlock the 'Giant Suglas
             trigger = (byte(0x12A370) != 0xff && byte(0x12A307) != 0xff && prior(byte(0x12A370)) != 0xff) || 
                       (byte(0x12A370) != 0xff && byte(0x12A307) != 0xff && prior(byte(0x12A307)) != 0xff)
 )
-
-
-
-
 
 
 // $12A3D3: [8 BIT] First 8 Houses
@@ -987,12 +422,6 @@ for index in range(1, 42){
 // $12A79C: [4 BIT] P2 Difficulty
 // $12A9E0: [4 BIT] P3 Difficulty
 // $12AC24: [4 BIT] P4 Difficulty
-// BITS 2 and 1 (bit2 bit1)
-// 00 == Weak
-// 01 == Normal
-// 10 == Strong
-// 11 == Powerful
-
 // Normal => bit2() == 0 && bit1() == 1
 // Strong => bit2() == 1 && bit1() == 0
 // Powerful => bit2() == 1 && bit1() == 1
@@ -1248,364 +677,11 @@ achievement(title = "Customizing Festival Master", description = "Win the Custom
                       byte(0x09c891) == 0x00 //1st place on the leaderboard (win)                      
 )
 
-// $12A3F0: [8 BIT] Character Unlock Flags 1
-//          Bit 0 = Rosalyn
-//          Bit 1 = Elmira
-//          Bit 2 = DJ Candy
-//          Bit 3 = Goth Boy
-//          Bit 4 = Watanabe
-//          Bit 5 = Dr. F
-//          Bit 6 = Gino
-//          Bit 7 = Roxie
-// $12A3F1: [8 BIT] Character Unlock Flags 2
-//          Bit 0 = Buddy
-//          Bit 1 = Vincent
-//          Bit 2 = Nicole
-//          Bit 3 = Odin
-//          Bit 4 = Poppy
-//          Bit 5 = Violet
-//          Bit 6 = Ginny
-//          Bit 7 = Vic
-// $12A3F2: [8 BIT] Character Unlock Flags 3
-//          Bit 0 = Travis
-//          Bit 1 = Trevor
-//          Bit 2 = Aran
-//          Bit 3 = Dolly
-//          Bit 4 = Zoe
-//          Bit 5 = Shirley
-//          Bit 6 = Chaz
-//          Bit 7 = Tim
-// $12A3F3: [8 BIT] Character Unlock Flags 4
-//          Bit 0 = Helen
-//          Bit 1 = Ewan
-//          Bit 2 = Tyler
-//          Bit 3 = Ashley
-//          Bit 4 = Joseph
-//          Bit 5 = Olivia
-//          Bit 6 = Sophie
-//          Bit 7 = Charlie
-// $12A3F4: [8 BIT] Character Unlock Flags 5
-//          Bit 0 = Marie
-//          Bit 1 = Tracy
-//          Bit 2 = Hawk
-//          Bit 3 = Martin
-//          Bit 4 = Nicki
-//          Bit 5 = Elizabeth
-//          Bit 6 = Emma
-//          Bit 7 = Foster
-// $12A3F5: [8 BIT] Character Unlock Flags 6
-//          Bit 0 = King Roland
-//          Bit 1 = MC Emi
-//          Bit 2 = Mitch
-// $12A433: [8 BIT] Minigame Unlock Flags (Festival Mode)
-//          Bit 0 = Pass and Check
-//          Bit 1 = Hush Hush Library Rush
-//          Bit 2 = My Mix Masters
-//          Bit 3 = Haunted Hunted
-//          Bit 4 = Sushi Scramble
-//          Bit 5 = Chemistry Calamity
-//          Bit 6 = Spaghetti Spin-Off
-//          Bit 7 = Soft Service
-// $12A434: [8 BIT] Minigame Unlock Flags (Festival Mode) 2
-//          Bit 0 = Vroom Service
-//          Bit 1 = Skull Finder
-//          Bit 2 = Clap Happy
-//          Bit 3 = Air-Guitar Star
-//          Bit 4 = Okay Bouquet
-//          Bit 5 = Petal Platform Peril
-//          Bit 6 = Keys to Success
-//          Bit 7 = Mallet Melee
-// $12A435: [8 BIT] Minigame Unlock Flags (Festival Mode) 3
-//          Bit 0 = Signal Search
-//          Bit 1 = Spotlight Please!
-//          Bit 2 = Sim-Fu Showdown
-//          Bit 3 = Fashion Mogul
-//          Bit 4 = Crystal Clear
-//          Bit 5 = Sudsy Salon
-//          Bit 6 = Skating Scamper
-//          Bit 7 = Soccer Bounce
-// $12A436: [8 BIT] Minigame Unlock Flags (Festival Mode) 4
-//          Bit 0 = Bus! Stop!
-//          Bit 1 = Catch the Crook
-//          Bit 2 = Clothing Cut-Out
-//          Bit 3 = Pretty Pottery
-//          Bit 4 = Gone Fishing
-//          Bit 5 = Hidden Treasures
-//          Bit 6 = Sleeping Sophie
-//          Bit 7 = Pastry Puzzle
-// $12A437: [8 BIT] Minigame Unlock Flags (Festival Mode) 5
-//          Bit 0 = Hang Gliding Hurricane
-//          Bit 1 = Fortune Finders
-//          Bit 2 = Shuffle Cup
-//          Bit 3 = Plane Pop
-//          Bit 4 = Bumper Boat Battle
-//          Bit 5 = Fashion Reaction
-//          Bit 6 = Perfect Slot Jackpot
-//          Bit 7 = Spotting Safari
 // $12A50A: [8 BIT] Current Minigame Number During Festival
 
 
 
-function minigameUnlockCount()
-{
-    return measured(
-           bit1(0x12A533) + bit2(0x12A533) + bit3(0x12A533) + bit4(0x12A533) + bit5(0x12A533) + bit6(0x12A533) + bit7(0x12A533) + //split up because bit0 is nothing
-           bitcount(0x12A534) + bitcount(0x12A535) + 
-           bitcount(0x12A536) + bitcount(0x12A537) + bit0(0x12A538) == 40
-           )
-}
-
-function prevMinigameCount()
-{
-    return (prev(
-                bit1(0x12A533) + bit2(0x12A533) + bit3(0x12A533) + bit4(0x12A533) + bit5(0x12A533) + bit6(0x12A533) + bit7(0x12A533) + //split up because bit0 is nothing
-                bitcount(0x12A534) + bitcount(0x12A535) + 
-                bitcount(0x12A536) + bitcount(0x12A537) + bit0(0x12A538)
-                )
-           )
-}
-
-// $12A533: [8 BIT] Minigame Unlock (Minigame Mode) BitFlags
-//          Bit 1 = Pass and Check
-//          Bit 2 = Hush Hush Library Rush
-//          Bit 3 = My Mix Masters
-//          Bit 4 = Haunted Hunted
-//          Bit 5 = Sushi Scramble
-//          Bit 6 = Chemistry Calamity
-//          Bit 7 = Spaghetti Spin-Off
-// $12A534: [8 BIT] Minigame Unlock (Minigame Mode) BitFlags 2
-//          Bit 0 = Soft Service
-//          Bit 1 = Vroom Service
-//          Bit 2 = Skull Finder
-//          Bit 3 = Clap Happy
-//          Bit 4 = Air-Guitar Star
-//          Bit 5 = Okay Bouquet
-//          Bit 6 = Petal Platform Peril
-//          Bit 7 = Keys to Success
-// $12A535: [8 BIT] Minigame Unlock (Minigame Mode) BitFlags 3
-//          Bit 0 = Mallet Melee
-//          Bit 1 = Signal Search
-//          Bit 2 = Spotlight Please!
-//          Bit 3 = Sim-Fu Showdown
-//          Bit 4 = Fashion Mogul
-//          Bit 5 = Crystal Clear
-//          Bit 6 = Sudsy Salon
-//          Bit 7 = Skating Scamper
-// $12A536: [8 BIT] Minigame Unlock (Minigame Mode) BitFlags 4
-//          Bit 0 = Soccer Bounce
-//          Bit 1 = Bus! Stop!
-//          Bit 2 = Catch the Crook
-//          Bit 3 = Clothing Cut-Out
-//          Bit 4 = Pretty Pottery
-//          Bit 5 = Gone Fishing
-//          Bit 6 = Hidden Treasures
-//          Bit 7 = Sleeping Sophie
-// $12A537: [8 BIT] Minigame Unlock (Minigame Mode) BitFlags 5
-//          Bit 0 = Pastry Puzzle
-//          Bit 1 = Hang Gliding Hurricane
-//          Bit 2 = Fortune Finders
-//          Bit 3 = Shuffle Cup
-//          Bit 4 = Plane Pop
-//          Bit 5 = Bumper Boat Battle
-//          Bit 6 = Fashion Reaction
-//          Bit 7 = Perfect Slot Jackpot
-// $12A538: [4 BIT] Minigame Unlock (Minigame Mode) BitFlags 6
-//          Bit 0 = Spotting Safari
-
-
 // $12A56C: [8 BIT] P1 Name First Letter (1)
-//          Letter Index:
-//          [if in letter space, end of name] 0x00=
-//          [Space IN NAME] 0x20=
-//          0x21=!
-//          0x22=""
-//          0x23=_
-//          0x24=$
-//          0x25=％
-//          0x26=&
-//          0x27='
-//          0x28=(
-//          0x29=)
-//          0x2A=*
-//          0x2B=+
-//          0x2C=,
-//          0x2D=-
-//          0x2E=.
-//          0x2F=/
-//          0x30=0
-//          0x31=1
-//          0x32=2
-//          0x33=3
-//          0x34=4
-//          0x35=5
-//          0x36=6
-//          0x37=7
-//          0x38=8
-//          0x39=9
-//          0x3A=:
-//          0x3B=;
-//          0x3C=<
-//          0x3D==
-//          0x3E=>
-//          0x3F=?
-//          0x40=@
-//          0x41=A
-//          0x42=B
-//          0x43=C
-//          0x44=D
-//          0x45=E
-//          0x46=F
-//          0x47=G
-//          0x48=H
-//          0x49=I
-//          0x4A=J
-//          0x4B=K
-//          0x4C=L
-//          0x4D=M
-//          0x4E=N
-//          0x4F=O
-//          0x50=P
-//          0x51=Q
-//          0x52=R
-//          0x53=S
-//          0x54=T
-//          0x55=U
-//          0x56=V
-//          0x57=W
-//          0x58=X
-//          0x59=Y
-//          0x5A=Z
-//          0x5B=[
-//          0x5C=\
-//          0x5D=]
-//          0x5E=^
-//          0x5F=_
-//          0x60=`
-//          0x61=a
-//          0x62=b
-//          0x63=c
-//          0x64=d
-//          0x65=e
-//          0x66=f
-//          0x67=g
-//          0x68=h
-//          0x69=i
-//          0x6A=j
-//          0x6B=k
-//          0x6C=l
-//          0x6D=m
-//          0x6E=n
-//          0x6F=o
-//          0x70=p
-//          0x71=q
-//          0x72=r
-//          0x73=s
-//          0x74=t
-//          0x75=u
-//          0x76=v
-//          0x77=w
-//          0x78=x
-//          0x79=y
-//          0x7A=z
-//          0x7B={
-//          0x7C=|
-//          0x7D=}
-//          0x7E=~
-//          0xA0=
-//          0xA1=¡
-//          0xA2=¢
-//          0xA3=£
-//          0xA4=¤
-//          0xA5=¥
-//          0xA6=¦
-//          0xA7=§
-//          0xA8=¨
-//          0xA9=©
-//          0xAA=ª
-//          0xAB=«
-//          0xAC=¬
-//          0xAD=­
-//          0xAE=®
-//          0xAF=¯
-//          0xB0=°
-//          0xB1=±
-//          0xB2=²
-//          0xB3=³
-//          0xB4=´
-//          0xB5=µ
-//          0xB6=¶
-//          0xB7=·
-//          0xB8=¸
-//          0xB9=¹
-//          0xBA=º
-//          0xBB=»
-//          0xBC=¼
-//          0xBD=½
-//          0xBE=¾
-//          0xBF=¿
-//          0xC0=À
-//          0xC1=Á
-//          0xC2=Â
-//          0xC3=Ã
-//          0xC4=Ä
-//          0xC5=Å
-//          0xC6=Æ
-//          0xC7=Ç
-//          0xC8=È
-//          0xC9=É
-//          0xCA=Ê
-//          0xCB=Ë
-//          0xCC=Ì
-//          0xCD=Í
-//          0xCE=Î
-//          0xCF=Ï
-//          0xD0=Ð
-//          0xD1=Ñ
-//          0xD2=Ò
-//          0xD3=Ó
-//          0xD4=Ô
-//          0xD5=Õ
-//          0xD6=Ö
-//          0xD7=×
-//          0xD8=Ø
-//          0xD9=Ù
-//          0xDA=Ú
-//          0xDB=Û
-//          0xDC=Ü
-//          0xDD=Ý
-//          0xDE=Þ
-//          0xDF=ß
-//          0xE0=à
-//          0xE1=á
-//          0xE2=â
-//          0xE3=ã
-//          0xE4=ä
-//          0xE5=å
-//          0xE6=æ
-//          0xE7=ç
-//          0xE8=è
-//          0xE9=é
-//          0xEA=ê
-//          0xEB=ë
-//          0xEC=ì
-//          0xED=í
-//          0xEE=î
-//          0xEF=ï
-//          0xF0=ð
-//          0xF1=ñ
-//          0xF2=ò
-//          0xF3=ó
-//          0xF4=ô
-//          0xF5=õ
-//          0xF6=ö
-//          0xF7=÷
-//          0xF8=ø
-//          0xF9=ù
-//          0xFA=ú
-//          0xFB=û
-//          0xFC=ü
-//          0xFD=ý
-//          0xFE=þ
 // $12A56E: [8 BIT]  P1 Name Letter 2
 // $12A570: [8 BIT]  P1 Name Letter 3
 // $12A572: [8 BIT]  P1 Name Letter 4
@@ -1621,36 +697,17 @@ function prevMinigameCount()
 // $12A586: [8 BIT]  P1 Name Letter 14
 // $12A588: [8 BIT]  P1 Name Letter 15
 // $12A58A: [8 BIT]  P1 Name Last Possible Letter (16)
+
 // $12A774: [16 BIT] P1 Festival Score (max 9,999)
 // $12A79C: [4 BIT]  P2 Difficulty
-//          0x1 = Weak
-//          0x3 = Normal
-//          0x5 = Strong
-//          0x7 = Powerful
 // $12A9B8: [16 BIT] P2 Festival Score (max 9,999)
 // $12A9E0: [4 BIT] P3 Difficulty
-//          0x1 = Weak
-//          0x3 = Normal
-//          0x5 = Strong
-//          0x7 = Powerful
 // $12ABFC: [16 BIT] P3 Festival Score (max 9,999)
 // $12AC24: [4 BIT] P4 Difficulty
-//          0x9 = Weak
-//          0xb = Normal
-//          0xd = Strong
-//          0xf = Powerful
 // $12AE40: [16 BIT] P4 Festival Score (max 9,999)
+
+
 // $12AF98: [32 BIT] Total Overall Score (from all festivals)
-// $12E464: [16 BIT] Pass and Check Highscore Record
-// $12E572: [16 BIT] Hush Hush Library Rush Highscore Record
-// $12E680: [16 BIT] My Mix Masters Highscore Record
-// $12E78E: [16 BIT] Haunted Hunted Highscore Record
-// $12E89C: [16 BIT] Sushi Scramble Highscore Record
-// $12E9AA: [16 BIT] Chemistry Calamity Highscore Record
-// $12EAB8: [16 BIT] Spaghetti Spin-Off Highscore Record
-// $12EBC6: [16 BIT] Soft Service Highscore Record
-// $12ECD4: [16 BIT] Vroom Service Highscore Record
-// $12FDB4: [16 BIT] Bus Stop Highscore Record 
 
 
 
@@ -2025,6 +1082,50 @@ achievement(title = "Professional Ghostbuster", description = "Score 100 points 
             trigger_when(byte(0x150458) >= 100)
 )
 
+
+achievement(title = "The Gambler", description = "Take a risk and use the 'Gamble Card' during a festival.", points = 2,
+            id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
+            trigger = byte(0x12a24c) == 0xcf &&//festival hall
+            byte(0x0ac797) == 0xd1 && byte(0x16d324) == 0x12
+)
+
+achievement(title = "3 OP Amigos", description = "Use the 'Hero Squad Card' during a festival.", points = 3,
+            id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
+            trigger = byte(0x12a24c) == 0xcf &&//festival hall
+            byte(0x0ac797) == 0xd1 && byte(0x16d324) == 0x15
+)
+
+achievement(title = "Full Power Engaged", description = "Use the 'Full Power Card' during a festival.", points = 2,
+            id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
+            trigger = byte(0x12a24c) == 0xcf &&//festival hall
+            byte(0x0ac797) == 0xd1 && byte(0x16d324) == 0x08
+)
+
+achievement(title = "Full Speed Ahead", description = "Use the 'Full Speed Card' during a festival.", points = 2,
+            id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
+            trigger = byte(0x12a24c) == 0xcf &&//festival hall
+            byte(0x0ac797) == 0xd1 && byte(0x16d324) == 0x09
+)
+
+achievement(title = "Full Technique Applied", description = "Use the 'Full Technique Card' during a festival.", points = 2,
+            id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
+            trigger = byte(0x12a24c) == 0xcf &&//festival hall
+            byte(0x0ac797) == 0xd1 && byte(0x16d324) == 0x0a
+)
+
+achievement(title = "Past, Present, and Future Tense", description = "Use the 'Full Tension Card' during a festival.", points = 2,
+            id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
+            trigger = byte(0x12a24c) == 0xcf &&//festival hall
+            byte(0x0ac797) == 0xd1 && byte(0x16d324) == 0x0b
+)
+
+achievement(title = "Can't Touch This", description = "Use the 'All Powerful Card' during a festival.", points = 2,
+            id = 0, badge = "00000", published = "8/6/2022", modified = "8/6/2022",
+            trigger = byte(0x12a24c) == 0xcf &&//festival hall
+            byte(0x0ac797) == 0xd1 && byte(0x16d324) == 0x17
+)
+
+
 // $282ffe: [8 BIT] Soccer Ball Horizontal Position
 // $283006: [8 BIT] Soccer Ball Vertical Position
 achievement(title = "GOOOOOOAL!!!", description = "Kick the soccer ball into the net in the Downtown Area.", points = 1,
@@ -2036,55 +1137,7 @@ achievement(title = "GOOOOOOAL!!!", description = "Kick the soccer ball into the
 )
 
 
-// $12A3F0: [8 BIT] Character Unlock Flags 1
-//          Bit 0 = Rosalyn
-//          Bit 1 = Elmira
-//          Bit 2 = DJ Candy
-//          Bit 3 = Goth Boy
-//          Bit 4 = Watanabe
-//          Bit 5 = Dr. F
-//          Bit 6 = Gino
-//          Bit 7 = Roxie
-// $12A3F1: [8 BIT] Character Unlock Flags 2
-//          Bit 0 = Buddy
-//          Bit 1 = Vincent
-//          Bit 2 = Nicole
-//          Bit 3 = Odin
-//          Bit 4 = Poppy
-//          Bit 5 = Violet
-//          Bit 6 = Ginny
-//          Bit 7 = Vic
-// $12A3F2: [8 BIT] Character Unlock Flags 3
-//          Bit 0 = Travis
-//          Bit 1 = Trevor
-//          Bit 2 = Aran
-//          Bit 3 = Dolly
-//          Bit 4 = Zoe
-//          Bit 5 = Shirley
-//          Bit 6 = Chaz
-//          Bit 7 = Tim
-// $12A3F3: [8 BIT] Character Unlock Flags 4
-//          Bit 0 = Helen
-//          Bit 1 = Ewan
-//          Bit 2 = Tyler
-//          Bit 3 = Ashley
-//          Bit 4 = Joseph
-//          Bit 5 = Olivia
-//          Bit 6 = Sophie
-//          Bit 7 = Charlie
-// $12A3F4: [8 BIT] Character Unlock Flags 5
-//          Bit 0 = Marie
-//          Bit 1 = Tracy
-//          Bit 2 = Hawk
-//          Bit 3 = Martin
-//          Bit 4 = Nicki
-//          Bit 5 = Elizabeth
-//          Bit 6 = Emma
-//          Bit 7 = Foster
-// $12A3F5: [8 BIT] Character Unlock Flags 6
-//          Bit 0 = King Roland
-//          Bit 1 = MC Emi
-//          Bit 2 = Mitch
+// $12A3F0 - 12A3F5 : [8 BIT] Character Unlock Flags
 
 function locationLookup() => byte(0x12a24c)
 
