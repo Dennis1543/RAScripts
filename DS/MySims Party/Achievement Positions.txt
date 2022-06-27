@@ -1,0 +1,146 @@
+[MISC ACHIEVEMENTS]
+0 Environmentalist
+1 GOOOOOOOAL!!!
+2 Money DOES grow on trees!
+3 White Water Rafting
+4 Mushroom Brothers
+5 MySims Pro Skater
+6 Is This Strangetown?
+7 Mine Cart Carnage
+8 Enable Spellcheck
+
+[MINIGAME ACHIEVEMENTS]
+9 Paper Pushin' Bureaucrat
+10 Librarian's Pet
+11 DJ Hero
+12 Professional Ghostbuster
+13 Sorry, We're Out Of That Menu Item
+14 The 'F' Stands for 'Achievement'
+15 Pasta Lover
+16 Dairy Queen Bee
+17 40 Seconds or Your Money Back
+18 Fossil Fighter 
+19 Standing Ovation
+20 Guitar Hero
+21 Poppy's Playtime
+22 Spooky Flower Collector
+23 Ginny's Personal Locksmith
+24 Brawn Over Brains
+25 Can You Hear Me Now?
+26 All Eyes On Me
+27 Untouchable Sim-Fu Sensei
+28 Dolly's Dutiful Designer
+29 Clairvoyant Cleanser
+30 Lather Rinse & Repeat
+31 Speed Skater
+32 EA Sports. It's In The Game
+33 Please Buy A Bus Schedule
+34 Police Cadet
+35 Tyler's Tailor in Training
+36 Pottery Perfectionist
+37 Snack That Smiles Back
+38 Treasure Finder
+39 Narcolepsy Be Gone
+40 Sous Chef
+41 Weather Dodger
+42 Gem Of The Day
+43 Beating The House
+44 Bloon's Plane Offense
+45 Cautious Captain
+46 Runway Model
+47 If Only Real Slots Were This Slow...
+48 Wildlife Conservationist
+
+[CARD ACHIEVEMENTS]
+49 The Gambler
+50 Full Power Engaged
+51 Full Speed Ahead
+52 Full Technique Applied
+53 Past Present, and Future Tense
+54 Can't Touch This
+55 3 OP Amigos
+
+[FESTIVAL WINNER]
+56 Opening Festival Winner
+57 Happy Festival Winner
+58 Pretty Festival Winner
+59 Music Festival Winner
+60 Bizarre Festival Winner
+61 Delicious Festival Winner
+62 Speed Festival Winner
+63 Horror Festival Winner
+64 Sports Festival Winner
+65 Dynamic Festival Winner
+66 Dream Festival Winner
+67 Customizing Festival Winner
+
+[FESTIVAL MASTER]
+68 Opening Festival Master
+69 Happy Festival Master
+70 Pretty Festival Master
+71 Music Festival Master
+72 Bizarre Festival Master
+73 Delicious Festival Master
+74 Speed Festival Master
+75 Horror Festival Master
+76 Sports Festival Master
+77 Dynamic Festival Master
+78 Dream Festival Master
+79 Customizing Festival Master
+
+[FRIEND ACHIEVEMENTS]
+80 Elmira's Friend
+81 DJ Candy's Friend
+82 Goth Boy's Friend
+83 Watanabe's Friend
+84 Dr. F's Friend
+85 Roxie's Friend
+86 Buddy's Friend
+87 Vincent's Friend
+88 Nicole's Friend
+89 Odin's Friend
+90 Poppy's Friend
+91 Violet's Friend
+92 Ginny's Friend
+93 Travis' Friend
+94 Trevor's Friend
+95 Aran's Friend
+96 Dolly's Friend
+97 Zoe's Friend
+98 Shirley's Friend
+99 Chaz's Friend
+100 Tim's Friend
+101 Helen's Friend
+102 Tyler's Friend
+103 Ashley's Friend
+104 Joseph's Friend
+105 Olivia's Friend
+106 Sophie's Friend
+107 Charlie's Friend
+108 Marie's Friend
+109 Tracy's Friend
+110 Hawk's Friend
+111 Martin's Friend
+112 Nicki's Friend
+113 Elizabeth's Friend
+114 Emma's Friend
+115 Foster's Friend
+116 King Roland's Friend
+117 MC Emi's Friend
+
+[COLLECTION ACHIEVEMENTS]
+118 Motherlode
+119 Sociable Sim
+120 Card Collector
+121 Happy Home Designer
+122 Ultimate Fashionista
+
+
+
+
+
+
+
+
+
+
