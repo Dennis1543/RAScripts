@@ -1,0 +1,56 @@
+Lookup:Minigame
+0=Heart Beat
+1=Lovers' Poem
+2=Cool Trunk of Joy
+3=Toilet Break
+4=Staring Contest
+5=Funky Mannequins
+6=Hit Haircuts
+7=Crow Choir
+8=Zoo Blues
+9=Touch of Magic
+10=Bee's Sneeze
+11=Sushi Swipe
+12=Rush Hour
+13=Wire Dancing
+14=Inner Beat
+15=Discord Beatdown
+16=Funk Factory
+17=Falling Acorns
+18=Silly Sauna
+19=Final Showdown
+
+Lookup:Difficulty
+0=Easy
+1=Normal
+2=Hard
+
+Format:AlbumUnlocks
+FormatType=VALUE
+
+Format:Score
+FormatType=VALUE
+
+Format:StarCount
+FormatType=VALUE
+
+Display:
+?1=1S0xH0e58d0=1S0xH0e58d0=25S0xH0e58d0=27S0xH0e58d0=32S0xH0e58d0=33?Browsing the Menus.
+?0xH0e58d0=2?Viewing the Beat Album with @AlbumUnlocks(0xK0e56d4_0xK0e56d5_0xM0e56d6_0xN0e56d6_0xO0e56d6_0xP0e56d6_0xQ0e56d6_0xR0e56d6)/22 items unlocked.
+?1=1S0xH0e58d0>2_0xH0e58d0<=7S0xH0e58d0=12?Viewing a Comic in 'Beat Revolution'.
+?0xH0e58d0=8?Playing the '3 Beat Moves' Tutorial.
+?0xH0e58d0=9?Starting to Explore a New Area.
+?0xH0e58d0=16?Snoozing in Bed.
+?0xH0e58d0=17?Building a Stairway to Heaven with @StarCount(0x 0e56d8_v-1)/232 Stars.
+?0xH0e58d0=10?Finishing Up An Area.
+?0xH0e58d0=13?Selecting a Day on the Calendar.
+?0xH0e58d0=14?Selecting a Level in 'Beat Revolution'.
+?0xH0e58d0=15?Viewing a Comic in 'Beat Revolution' Before A Minigame.
+?1=1S0xH0e58d0=21S0xH0e58d0=22?Selecting a Minigame.
+?0xH0e58d0=23?Playing @Minigame(0xH0e56f0) on @Difficulty(0xH0e56f8). 
+?0xH0e58d0=24?Finishing @Minigame(0xH0e56f0) on @Difficulty(0xH0e56f8) with a score of @Score(0xX0e576c)%.
+?1=1S0xH0e58d0=42S0xH0e58d0=64S0xH0e58d0=52S0xH0e58d0=57S0xH0e58d0=58?Waiting Through a Loading Screen.
+?0xH0e58d0=36?Vibing in the Pause Menu.
+?0xH0e58d0=37?Restarting a Minigame.
+?0xH0e58d0=38?Quitting a Minigame.
+Playing Beat City.
