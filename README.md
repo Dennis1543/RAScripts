@@ -3,4 +3,4 @@ Collection of scripts/icons created for developing achievement sets on RetroAchi
 
 My RA Profile: https://retroachievements.org/user/Dennis1543
 
-Current Status: Junior Developer
+Current Status: Developer ~~Junior Developer~~
