@@ -1,0 +1,22 @@
+Lookup:World
+0=Cruise Ship
+1=Train
+2=Submarine
+3=Blimp
+4=Spaceship
+
+Format:Current Score
+FormatType=VALUE
+
+Format:Level Number
+FormatType=VALUE
+
+Format:World Number
+FormatType=VALUE
+
+Display:
+?0xX15fa68=1?Browsing the Menus.
+?0xX15fa68=2?Selecting a Restaurant.
+?0xH2bb720=0S0xX15fa68=28S0xX15fa68=38S0xX15fa68=31?Diner Dashing on the @World(0xX2bb73c) in Story Mode Level @World Number(0xX2bb73c_v1).@Level Number(0xX2bb740_v1), 💰=@Current Score(I:0xW162edc_B:0xX000008_I:0xW162edc_M:0xX000000).
+?0xH2bb720=1S0xX15fa68=28S0xX15fa68=38S0xX15fa68=31?Diner Dashing on the @World(0xX2bb73c) in Endless Mode, 💰=@Current Score(I:0xW162edc_B:0xX000008_I:0xW162edc_M:0xX000000).
+Playing Diner Dash Flo on the Go.
