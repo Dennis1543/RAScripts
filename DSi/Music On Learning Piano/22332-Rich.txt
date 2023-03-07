@@ -1,0 +1,37 @@
+Lookup:CurrentSong
+0=Ode to Joy
+1=For Elise
+2=Wedding March
+3=Opus 10. 2
+4=Hungarian Dance No. 5
+5=Brahms' Lullaby
+6=The Blue Danube
+7=Minuet in G Major
+8=La Traviata
+9=In the Hall of the Mountain King
+10=Canon
+11=Radetzky March
+12=Musette in D Major
+13=The Entertainer
+14=The Infernal Galop
+
+Lookup:CurrentDifficulty
+0=Bronze
+1=Silver
+2=Gold
+3=Master
+
+Format:TotalPoints
+FormatType=VALUE
+
+Display:
+?0xXffe00c!=1161312331?Messing Around With The DSi.
+?0xH05a7a9=1?Reading Through the Help Menus. | Total Points: @TotalPoints(0xX0a8da0)
+?0xH05b5f8=56?Admiring the Title Screen. | Total Points: @TotalPoints(0xX0a8da0)
+?0xH05b5f8=178?At the Pause Menu. | Total Points: @TotalPoints(0xX0a8da0)
+?0xH05b5f8=192?Selecting a Song to Perform. | Total Points: @TotalPoints(0xX0a8da0)
+?0xH05b5f8=70?Selecting a Difficulty for @CurrentSong(0xH0a8de0). | Total Points: @TotalPoints(0xX0a8da0)
+?0xH05b5f8=2?Watching a Demo of @CurrentSong(0xH0a8de0). | Total Points: @TotalPoints(0xX0a8da0)
+?0xH05b5f8=12?Playing @CurrentSong(0xH0a8de0) on @CurrentDifficulty(0xH06b1c4) Difficulty. | Total Points: @TotalPoints(0xX0a8da0)
+?1=1S0xH05b5f8=0S0xH05b5f8=8?Ending @CurrentSong(0xH0a8de0) on @CurrentDifficulty(0xH06b1c4) Difficulty. | Total Points: @TotalPoints(0xX0a8da0)
+Playing Music On: Learning Piano (DSi)
