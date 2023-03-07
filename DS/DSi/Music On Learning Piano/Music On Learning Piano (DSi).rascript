@@ -57,53 +57,53 @@ Music_On= 0x4538384b
 UnlockMilestones = [2600, 3400, 4000, 4800, 5700, 10000, 12000, 15000, 18000, 22000]
 
 achievement(title = "Wait, There's More Than 5 Songs?", description = "Unlock 'Brahms' Lullaby'", points = 1,
-            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 2600 && prev(currentTotalPoints()) < 2600 && currentScreenID() != Title_Screen,
-            published = "29/1/2023", modified = "29/1/2023"
+            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 2600 && prev(currentTotalPoints()) < 2600 && currentScreenID() == Playing_Song,
+            published = "6/3/2023", modified = "6/3/2023"
             )
 
 achievement(title = "Waltz Time", description = "Unlock 'The Blue Danube'", points = 1,
-            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 3400 && prev(currentTotalPoints()) < 3400 && currentScreenID() != Title_Screen,
-            published = "29/1/2023", modified = "29/1/2023"
+            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 3400 && prev(currentTotalPoints()) < 3400 && currentScreenID() == Playing_Song,
+            published = "6/3/2023", modified = "6/3/2023"
             )
             
-achievement(title = "Bach Again With a New Song", description = "Unlock 'Minuet in G Major'", points = 1,
-            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 4000 && prev(currentTotalPoints()) < 4000 && currentScreenID() != Title_Screen,
-            published = "29/1/2023", modified = "29/1/2023"
+achievement(title = "Yeah, G Major!", description = "Unlock 'Minuet in G Major'", points = 1,
+            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 4000 && prev(currentTotalPoints()) < 4000 && currentScreenID() == Playing_Song,
+            published = "6/3/2023", modified = "6/3/2023"
             )            
 
 achievement(title = "A Taste of Italy", description = "Unlock 'La Traviata'", points = 1,
-            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 2600 && prev(currentTotalPoints()) < 2600 && currentScreenID() != Title_Screen,
-            published = "29/1/2023", modified = "29/1/2023"
+            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 4800 && prev(currentTotalPoints()) < 4800 && currentScreenID() == Playing_Song,
+            published = "6/3/2023", modified = "6/3/2023"
             )
             
-achievement(title = "", description = "Unlock 'In the Hall of the Mountain King'", points = 1,
-            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 2600 && prev(currentTotalPoints()) < 2600 && currentScreenID() != Title_Screen,
-            published = "29/1/2023", modified = "29/1/2023"
+achievement(title = "Peer Gynt's Wild Fantasy", description = "Unlock 'In the Hall of the Mountain King'", points = 1,
+            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 5700 && prev(currentTotalPoints()) < 5700 && currentScreenID() == Playing_Song,
+            published = "6/3/2023", modified = "6/3/2023"
             )            
             
-achievement(title = "", description = "Unlock 'Canon'", points = 2,
-            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 2600 && prev(currentTotalPoints()) < 2600 && currentScreenID() != Title_Screen,
-            published = "29/1/2023", modified = "29/1/2023"
+achievement(title = "D A B F# G D G A", description = "Unlock 'Canon'", points = 2,
+            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 10000 && prev(currentTotalPoints()) < 10000 && currentScreenID() == Playing_Song,
+            published = "6/3/2023", modified = "6/3/2023"
             )            
             
-achievement(title = "", description = "Unlock 'Radetzky March'", points = 2,
-            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 2600 && prev(currentTotalPoints()) < 2600 && currentScreenID() != Title_Screen,
-            published = "29/1/2023", modified = "29/1/2023"
+achievement(title = "An Austrian New Year (Clap Along!)", description = "Unlock 'Radetzky March'", points = 2,
+            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 12000 && prev(currentTotalPoints()) < 12000 && currentScreenID() == Playing_Song,
+            published = "6/3/2023", modified = "6/3/2023"
             )            
             
-achievement(title = "", description = "Unlock 'Musette in D Major'", points = 2,
-            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 2600 && prev(currentTotalPoints()) < 2600 && currentScreenID() != Title_Screen,
-            published = "29/1/2023", modified = "29/1/2023"
+achievement(title = "Bach Again With Another New Song", description = "Unlock 'Musette in D Major'", points = 2,
+            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 15000 && prev(currentTotalPoints()) < 15000 && currentScreenID() == Playing_Song,
+            published = "6/3/2023", modified = "6/3/2023"
             )
             
-achievement(title = "", description = "Unlock 'The Entertainer'", points = 2,
-            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 2600 && prev(currentTotalPoints()) < 2600 && currentScreenID() != Title_Screen,
-            published = "29/1/2023", modified = "29/1/2023"
+achievement(title = "A Little Ragtime Jig", description = "Unlock 'The Entertainer'", points = 2,
+            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 18000 && prev(currentTotalPoints()) < 18000 && currentScreenID() == Playing_Song,
+            published = "6/3/2023", modified = "6/3/2023"
             )    
             
-achievement(title = "", description = "Unlock 'The Infernal Galop'", points = 2,
-            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 2600 && prev(currentTotalPoints()) < 2600 && currentScreenID() != Title_Screen,
-            published = "29/1/2023", modified = "29/1/2023"
+achievement(title = "Can You Play Can-Can?", description = "Unlock 'The Infernal Galop'", points = 2,
+            trigger = currentRunningApp() == Music_On && currentTotalPoints() >= 22000 && prev(currentTotalPoints()) < 22000 && currentScreenID() == Playing_Song,
+            published = "6/3/2023", modified = "6/3/2023"
             )    
             
 // $0A8DA4: [8 BIT] Ode to Joy - Bronze Percentage
@@ -221,7 +221,22 @@ SongNumToName =
     14: "The Infernal Galop"
 }
 
+DifficultyAwards = ["Bronze Medal", "Silver Medal", "Gold Medal", "Laurel Wreath"]
 
+pointVals = [2, 3, 5, 10]
+
+
+
+for song in range(0, 14)
+{
+    for difficulty in range(0,3)
+    {
+        achievement(title = SongNumToName[song] + " [" + DifficultyNumToName[difficulty] + "]", description = "Earn the " + DifficultyAwards[difficulty] + " on " + SongNumToName[song] + ".", points = pointVals[difficulty],
+        trigger = currentRunningApp() == Music_On && currentScreenID() == Playing_Song && currentSongID() == song && currentSongDifficulty() == difficulty &&
+                  byte(0x0A8DA4 + (4 * song) + difficulty) >= 85 && prev(byte(0x0A8DA4 + (4 * song) + difficulty)) < 85
+        )
+    }
+}
 
 // $30546C: [8 BIT] End Screen Percentage
 // $3054EC: [32 BIT] Key Pressed
@@ -249,9 +264,7 @@ SongNumToName =
 //          0x15 = A
 //          0x16 = A#
 //          0x17 = B
-
-// TODO: Make the Licc Achievement
-
+//          0xff = No Note Playing
 
 
 
