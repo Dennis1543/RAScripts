@@ -175,7 +175,7 @@ achievement(title = "Quadruple Digits!", description = "Earn 1000+ points in any
 achievement(title = "No Clown Left Behind", description = "Earn 500+ points in any game without dropping a clown.", points = 10,
               id = 0, badge = "00000", published = "28/2/2023", modified = "28/2/2023",
               trigger = gameStateLookup() == Playing && !isTwoPlayerLevel() && 
-              disable_when(lostAClown(), until= (gameStateLookup() == EndGame || gameStateLookup() == Title || gameStateLookup() == SelectingGame) ) &&
+              disable_when(lostAClown(), until= (gameStateLookup() == EndGame || gameStateLookup() == Title || gameStateLookup() == SelectingGame || byte(0x004c) != 0xff) ) &&
               trigger_when(calcCurrentScore() >= 500 && prior(calcCurrentScore()) < 500)
             )
 
