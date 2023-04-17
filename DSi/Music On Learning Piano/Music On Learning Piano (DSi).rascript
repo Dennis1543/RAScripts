@@ -266,24 +266,30 @@ for song in range(0, 14)
 //          0x17 = B
 //          0xff = No Note Playing
 
-
-
+// $305472: [8 BIT] Score Status
+//          0x00 = New Record
+//          0x01 = No New Record
+   
 // Leaderboards for percentages
-for song in range(0, 14)
+
+for song in range(0,14)
 {
     for difficulty in range(0,3)
     {
-        leaderboard
+       leaderboard
         (SongNumToName[song] + " - " + DifficultyNumToName[difficulty],
         "Get the highest percentage on " + SongNumToName[song] + " on " + DifficultyNumToName[difficulty] + " difficulty",
         start = currentRunningApp() == Music_On && currentSongID() == song && currentSongDifficulty() == difficulty && currentScreenID() == Completed_Appears,
         cancel = always_false(),
         submit = byte(0x05B5F8) == 0xc0 && byte(0x05a7a9) == 0x00,
-        value = measured(byte(0x30546C)),
+        value = max_of(measured(byte(0x30546C), when=byte(0x305472) == 0x01),
+                       measured(byte(0x0A8DA4 + (4 * song) + difficulty), when=byte(0x305472) == 0x00)
+                       ),
         format = "VALUE"
         )
     }
 }
+
 
 //Rich Presence
 rich_presence_conditional_display( currentRunningApp() != Music_On, "Messing Around With The DSi.")
