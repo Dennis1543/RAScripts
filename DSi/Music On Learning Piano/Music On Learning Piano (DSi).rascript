@@ -266,30 +266,45 @@ for song in range(0, 14)
 //          0x17 = B
 //          0xff = No Note Playing
 
-// $305472: [8 BIT] Score Status
-//          0x00 = New Record
-//          0x01 = No New Record
-   
+
 // Leaderboards for percentages
+
+
+
+function currentSongSavedScore(song, difficulty)
+{
+    return byte(0x0A8DA4 + (4 * song) + difficulty)
+}
+
+// $30546f: [8 BIT] New Record Blinking
+//          0x3c = Blinking (new record)
+
+// NOTE: This had a very weird issue with frame delay between updating scores, pressing continue too quickly before the percentage added up, and a lot of other issues.
+// This was fixed by adding in the following condition manually in RALib into the alt value group of all of these leaderboards:
+
+// This causes a hit to be added once the blinking for new record occurs (byte(0x30546f) == 0x3c), and causes the measured to be equal to the saved score percentage.
+// If this MeasuredIf condition is not met, the measured defaults to 0, and therefore takes the max_of(0, OnScreenPercentage) = OnScreenPercentage.
+ 
+// AddHits      Mem 8-bit 0x30546f = Value 0x3c (1)
+// MeasuredIf   Value     0x00     = Value 0x01 (1)
 
 for song in range(0,14)
 {
     for difficulty in range(0,3)
     {
-       leaderboard
+        leaderboard
         (SongNumToName[song] + " - " + DifficultyNumToName[difficulty],
         "Get the highest percentage on " + SongNumToName[song] + " on " + DifficultyNumToName[difficulty] + " difficulty",
         start = currentRunningApp() == Music_On && currentSongID() == song && currentSongDifficulty() == difficulty && currentScreenID() == Completed_Appears,
         cancel = always_false(),
         submit = byte(0x05B5F8) == 0xc0 && byte(0x05a7a9) == 0x00,
-        value = max_of(measured(byte(0x30546C), when=byte(0x305472) == 0x01),
-                       measured(byte(0x0A8DA4 + (4 * song) + difficulty), when=byte(0x305472) == 0x00)
+        value = max_of(measured(byte(0x30546C)),
+                       measured(currentSongSavedScore(song, difficulty))
                        ),
         format = "VALUE"
         )
     }
 }
-
 
 //Rich Presence
 rich_presence_conditional_display( currentRunningApp() != Music_On, "Messing Around With The DSi.")
